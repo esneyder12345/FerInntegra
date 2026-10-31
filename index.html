@@ -1,0 +1,2446 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNTEGRA | Feria Empresarial & INNTEGRA KIDS - Cartago y Norte del Valle</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: MuseoModerno (Oficial Manual), Plus Jakarta Sans (Equivalente Codec Pro), Fredoka & Patrick Hand (Equivalente LazyDog para KIDS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=MuseoModerno:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&family=Patrick+Hand&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        inntegra: {
+                            violet: '#5E17EB',
+                            violetDark: '#3B0A99',
+                            violetDeep: '#240563',
+                            violetLight: '#EDE5FF',
+                            orange: '#FF8200',
+                            orangeLight: '#FFF0E0',
+                            yellow: '#FFD800',
+                            yellowLight: '#FFFBEB',
+                            coffee: '#5C2C16',
+                            coffeeDark: '#3A190A',
+                            surface: '#F8F6FF'
+                        }
+                    },
+                    fontFamily: {
+                        museo: ['"MuseoModerno"', 'sans-serif'],
+                        codec: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        kids: ['"Fredoka"', 'cursive'],
+                        lazydog: ['"Patrick Hand"', 'cursive']
+                    },
+                    boxShadow: {
+                        'violet-glow': '0 20px 50px -12px rgba(94, 23, 235, 0.45)',
+                        'orange-glow': '0 15px 35px -8px rgba(255, 130, 0, 0.5)',
+                        'yellow-glow': '0 15px 35px -8px rgba(255, 216, 0, 0.5)',
+                        'neo': '6px 6px 0px 0px #240563',
+                        'neo-yellow': '6px 6px 0px 0px #FFD800',
+                        'neo-orange': '6px 6px 0px 0px #FF8200',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos personalizados basados en el Manual de Marca INNTEGRA */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8F6FF;
+            color: #1A0B3B;
+            overflow-x: hidden;
+        }
+
+        /* Curva fluida animada que simboliza el camino del emprendedor ("INN") */
+        @keyframes dashWave {
+            0% { stroke-dashoffset: 1200; }
+            100% { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1.5deg); }
+        }
+
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-8px) scale(1.03); }
+        }
+
+        @keyframes pulseRing {
+            0% { transform: scale(0.9); opacity: 0.8; }
+            70% { transform: scale(1.35); opacity: 0; }
+            100% { transform: scale(1.35); opacity: 0; }
+        }
+
+        .animate-float {
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        .animate-mascot {
+            animation: bounceGentle 3.2s ease-in-out infinite;
+        }
+
+        @keyframes coffeeSplash {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-5px) scale(1.06); }
+        }
+
+        .splash-drop {
+            animation: coffeeSplash 1.8s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        /* Comillas gráficas del Manual de Marca (abrazos gráficos) */
+        .brand-quote-frame {
+            position: relative;
+        }
+        .brand-quote-frame::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 22px;
+            height: 22px;
+            border-top: 5px solid #FFD800;
+            border-left: 5px solid #FFD800;
+            border-top-left-radius: 4px;
+            pointer-events: none;
+        }
+        .brand-quote-frame::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 22px;
+            height: 22px;
+            border-top: 5px solid #FF8200;
+            border-right: 5px solid #FF8200;
+            border-top-right-radius: 4px;
+            pointer-events: none;
+        }
+
+        /* Patrón sutil de ondas de identidad */
+        .bg-inntegra-pattern {
+            background-color: #5E17EB;
+            background-image: 
+                radial-gradient(circle at 12% 18%, rgba(255, 130, 0, 0.22) 0%, transparent 35%),
+                radial-gradient(circle at 88% 82%, rgba(255, 216, 0, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(59, 10, 153, 0.6) 0%, transparent 70%);
+        }
+
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #240563;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5E17EB;
+            border-radius: 9999px;
+            border: 2px solid #FFD800;
+        }
+
+        /* Transiciones suaves para los nodos del camino */
+        .curve-node {
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .curve-node:hover, .curve-node.active {
+            transform: scale(1.18);
+        }
+
+        /* Efecto de malla en el plano de stands */
+        .blueprint-grid {
+            background-size: 28px 28px;
+            background-image: 
+                linear-gradient(to right, rgba(94, 23, 235, 0.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(94, 23, 235, 0.07) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="selection:bg-inntegra-yellow selection:text-inntegra-violetDeep">
+
+    <!-- ==========================================
+         BARRA SUPERIOR DE ANUNCIO (INVERSIÓN E IMPACTO COMERCIAL)
+         ========================================== -->
+    <div class="bg-inntegra-violetDeep text-white text-xs sm:text-sm py-2.5 px-4 border-b border-white/10 relative z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-inntegra-yellow text-inntegra-violetDeep uppercase tracking-wider">
+                    <i class="ph-fill ph-sparkle mr-1"></i> Convocatoria Oficial Abierta
+                </span>
+                <p class="font-medium text-white/90">
+                    La principal plataforma de visibilización, ventas y conexiones reales en <strong class="text-inntegra-yellow">Cartago y el Norte del Valle</strong>.
+                </p>
+            </div>
+            <div class="hidden md:flex items-center gap-4 text-xs text-white/80">
+                <span class="flex items-center gap-1"><i class="ph-fill ph-map-pin text-inntegra-orange"></i> Cartago, Valle del Cauca</span>
+                <span>•</span>
+                <button onclick="scrollToSection('inntegra-kids')" class="text-inntegra-yellow hover:underline font-semibold flex items-center gap-1">
+                    ☕ Conoce nuestra Mascota & INNTEGRA KIDS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         NAVEGACIÓN PRINCIPAL CON LOGOTIPO OFICIAL SVG
+         ========================================== -->
+    <header id="main-header" class="sticky top-0 z-40 bg-inntegra-violet/95 backdrop-blur-md border-b border-white/15 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- LOGOTIPO OFICIAL INNTEGRA (Recreado vectorialmente según páginas 5, 6, 7 y 13 del Manual) -->
+            <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Inicio INNTEGRA">
+                <div class="relative py-1">
+                    <svg class="h-12 sm:h-14 w-auto overflow-visible" viewBox="0 0 315 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Elemento opcional de categorización: Curva superior + "Feria empresarial" (Pág. 5 del Manual) -->
+                        <path d="M 38 16 Q 92 2 146 16" stroke="#FF8200" stroke-width="2.2" stroke-linecap="round" fill="none" class="opacity-90"/>
+                        <text x="92" y="11" text-anchor="middle" fill="#FFD800" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9.5" letter-spacing="0.8">Feria empresarial</text>
+
+                        <!-- Comilla izquierda amarilla/naranja (Pág. 5 y 6: "enmarcado por dos pequeñas comillas") -->
+                        <path d="M 10 38 L 10 24 L 24 24" stroke="#FFD800" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Curva fluida "INN" que une las tres primeras letras (Pág. 6: "une las tres primeras letras 'INN' mediante una gran curva fluida") -->
+                        <path d="M 22 33 L 22 52 C 22 61 35 61 35 52 L 35 39 C 35 31 48 31 48 39 L 48 52 C 48 61 60 61 60 52 L 60 39 C 60 31 73 31 73 39 L 73 58" 
+                              stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"
+                              class="group-hover:stroke-inntegra-yellow transition-colors duration-300"/>
+                        
+                        <!-- Letras "TEGRA" en MuseoModerno Bold -->
+                        <text x="81" y="59" fill="#FFFFFF" font-family="'MuseoModerno', sans-serif" font-weight="800" font-size="43" letter-spacing="-1">TEGRA</text>
+                        
+                        <!-- Comilla derecha naranja (Pág. 5 y 6) -->
+                        <path d="M 278 24 L 292 24 L 292 38" stroke="#FF8200" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                        <!-- Elemento opcional variable inferior (Pág. 5) -->
+                        <text x="235" y="75" text-anchor="middle" fill="#FFD800" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10" letter-spacing="0.5">Edición Norte del Valle</text>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Enlaces Desktop -->
+            <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-semibold text-white/90">
+                <a href="#camino-inn" class="px-3 py-2 rounded-xl hover:bg-white/10 hover:text-inntegra-yellow transition">El Camino "INN"</a>
+                <a href="#proposito" class="px-3 py-2 rounded-xl hover:bg-white/10 hover:text-inntegra-yellow transition">Planes & Inversión</a>
+                <a href="#mapa-stands" class="px-3 py-2 rounded-xl hover:bg-white/10 hover:text-inntegra-yellow transition flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span> Mapa de Stands
+                </a>
+                <a href="#inntegra-kids" class="px-3.5 py-1.5 rounded-xl bg-inntegra-yellow/15 border border-inntegra-yellow/40 text-inntegra-yellow hover:bg-inntegra-yellow hover:text-inntegra-violetDeep transition flex items-center gap-1.5 font-kids tracking-wide">
+                    <span>☕</span> Mascota & KIDS
+                </a>
+                <a href="#identidad-merch" class="px-3 py-2 rounded-xl hover:bg-white/10 hover:text-inntegra-yellow transition">Tienda & Marca</a>
+            </nav>
+
+            <!-- Botón CTA Principal -->
+            <div class="flex items-center gap-3">
+                <button onclick="openRegistrationModal('general')" class="relative inline-flex items-center gap-2 bg-inntegra-orange hover:bg-inntegra-yellow text-white hover:text-inntegra-violetDeep font-extrabold text-xs sm:text-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl shadow-orange-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                    <i class="ph-bold ph-storefront text-lg"></i>
+                    <span>Reservar mi Stand</span>
+                </button>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-white/10 text-white hover:bg-white/20 focus:outline-none" aria-label="Abrir menú">
+                    <i id="mobile-menu-icon" class="ph-bold ph-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-inntegra-violetDeep border-b border-white/15 px-4 pt-3 pb-6 space-y-2">
+            <a href="#camino-inn" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-white font-semibold hover:bg-white/10">1. El Camino "INN" (Ruta del Emprendedor)</a>
+            <a href="#proposito" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-white font-semibold hover:bg-white/10">2. Planes de Stand y Simulador de Inversión</a>
+            <a href="#mapa-stands" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-white font-semibold hover:bg-white/10">3. Mapa Interactivo de Pabellones y Stands</a>
+            <a href="#inntegra-kids" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl bg-inntegra-yellow/20 text-inntegra-yellow font-kids font-bold">4. ☕ Mascota Oficial & Universo INNTEGRA KIDS</a>
+            <a href="#identidad-merch" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-white font-semibold hover:bg-white/10">5. Kit Oficial & Camisetas INNTEGRA</a>
+            <div class="pt-2">
+                <button onclick="toggleMobileMenu(); openRegistrationModal('general');" class="w-full py-3 rounded-xl bg-inntegra-orange text-white font-extrabold shadow-lg">
+                    Adquirir mi Stand Oficial
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         SECCIÓN 1: HERO ASIMÉTRICO ("ESTÁS ADENTRO") + MASCOTA CAFETERA
+         ========================================== -->
+    <section class="relative bg-inntegra-pattern text-white pt-10 pb-24 lg:pt-16 lg:pb-32 overflow-hidden">
+        <!-- Gran Curva SVG de fondo que simboliza el camino del emprendedor -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none">
+            <path d="M-100 650 C 220 650, 260 180, 560 180 C 860 180, 820 580, 1120 580 C 1340 580, 1390 200, 1600 180" 
+                  stroke="url(#heroWaveGrad)" stroke-width="28" stroke-linecap="round" stroke-dasharray="16 24"/>
+            <path d="M-100 720 C 260 720, 300 250, 600 250 C 900 250, 860 640, 1160 640 C 1380 640, 1420 260, 1620 240" 
+                  stroke="url(#heroWaveGrad)" stroke-width="6" stroke-linecap="round"/>
+            <defs>
+                <linearGradient id="heroWaveGrad" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FFD800"/>
+                    <stop offset="50%" stop-color="#FF8200"/>
+                    <stop offset="100%" stop-color="#FFD800"/>
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Columna Izquierda: Mensaje de Marca -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Etiqueta con significado de "INN" -->
+                    <div class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-2xl">
+                        <span class="flex h-3 w-3 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-inntegra-yellow opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-inntegra-yellow"></span>
+                        </span>
+                        <span class="text-xs sm:text-sm font-bold tracking-wide text-inntegra-yellow uppercase">
+                            "INN" significa ADENTRO • Cartago & Norte del Valle
+                        </span>
+                    </div>
+
+                    <!-- Título Principal enmarcado con las comillas del manual -->
+                    <div class="relative inline-block">
+                        <h1 class="font-museo text-4xl sm:text-6xl xl:text-7xl font-extrabold leading-[1.06] tracking-tight">
+                            En <span class="text-inntegra-yellow">INNTEGRA</span> no emprendes solo,<br>
+                            <span class="relative inline-block mt-1 px-4 py-1 bg-white/10 rounded-2xl border border-white/15">
+                                <!-- Comilla izquierda amarilla -->
+                                <span class="absolute -top-2.5 -left-2.5 w-6 h-6 border-t-4 border-l-4 border-inntegra-yellow rounded-tl-md"></span>
+                                <span class="bg-gradient-to-r from-inntegra-yellow via-amber-300 to-inntegra-orange bg-clip-text text-transparent">
+                                    ¡estás adentro!
+                                </span>
+                                <!-- Comilla derecha naranja -->
+                                <span class="absolute -top-2.5 -right-2.5 w-6 h-6 border-t-4 border-r-4 border-inntegra-orange rounded-tr-md"></span>
+                            </span>
+                        </h1>
+                    </div>
+
+                    <p class="text-base sm:text-xl text-white/90 max-w-2xl leading-relaxed font-normal">
+                        La feria empresarial de <strong class="text-white font-bold">mayor proyección comercial, cercanía y respaldo real</strong> del Norte del Valle del Cauca. Un escenario con energía cafetera y visión moderna donde tu inversión se transforma en ventas, alianzas y posicionamiento de marca.
+                    </p>
+
+                    <!-- Botones de Acción -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                        <button onclick="openRegistrationModal('general')" class="group relative inline-flex items-center justify-center gap-3 bg-inntegra-yellow hover:bg-white text-inntegra-violetDeep font-extrabold text-base sm:text-lg px-7 py-4 rounded-2xl shadow-yellow-glow transition-all duration-300 transform hover:-translate-y-1">
+                            <span>Reservar mi Stand Comercial</span>
+                            <i class="ph-bold ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+
+                        <button onclick="scrollToSection('proposito')" class="inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/25 font-bold text-base px-6 py-4 rounded-2xl backdrop-blur-sm transition">
+                            <i class="ph-duotone ph-calculator text-xl text-inntegra-orange"></i>
+                            <span>Cotizar Planes y Tarifas</span>
+                        </button>
+                    </div>
+
+                    <!-- Indicadores Rápidos de Impacto -->
+                    <div class="pt-6 grid grid-cols-3 gap-3 sm:gap-6 border-t border-white/15">
+                        <div class="bg-white/5 backdrop-blur-sm p-3.5 rounded-2xl border border-white/10">
+                            <div class="font-museo text-2xl sm:text-3xl font-extrabold text-inntegra-yellow">4 Planes</div>
+                            <div class="text-xs sm:text-sm text-white/80 font-medium">Modalidades de stand a tu medida</div>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm p-3.5 rounded-2xl border border-white/10">
+                            <div class="font-museo text-2xl sm:text-3xl font-extrabold text-inntegra-orange">+150</div>
+                            <div class="text-xs sm:text-sm text-white/80 font-medium">Marcas locales y proyectos KIDS</div>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm p-3.5 rounded-2xl border border-white/10">
+                            <div class="font-museo text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+                            <div class="text-xs sm:text-sm text-white/80 font-medium">Acompañamiento, vitrina y mentoría</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjeta Interactiva "Anatomía del Abrazo INNTEGRA" + Mini Mascota -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-inntegra-violetDeep/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border-2 border-white/20 shadow-2xl">
+                        <!-- Comillas superiores decorativas gigantes -->
+                        <div class="absolute -top-4 -left-4 w-12 h-12 border-t-[7px] border-l-[7px] border-inntegra-yellow rounded-tl-xl"></div>
+                        <div class="absolute -top-4 -right-4 w-12 h-12 border-t-[7px] border-r-[7px] border-inntegra-orange rounded-tr-xl"></div>
+
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-bold uppercase tracking-widest text-inntegra-yellow bg-inntegra-yellow/10 px-3 py-1 rounded-full border border-inntegra-yellow/30">
+                                Identidad Viva • Simbología Oficial
+                            </span>
+                            <span class="text-xs text-white/70 flex items-center gap-1">
+                                <i class="ph-fill ph-cursor-click text-inntegra-orange"></i> Toca cada símbolo
+                            </span>
+                        </div>
+
+                        <!-- Visualizador Interactivo del Logo -->
+                        <div class="bg-gradient-to-br from-inntegra-violet to-inntegra-violetDark rounded-2xl p-6 border border-white/15 text-center relative overflow-hidden mb-5">
+                            <svg class="w-full max-w-[300px] mx-auto h-auto overflow-visible" viewBox="0 0 320 110" fill="none">
+                                <!-- Curva superior clickeable -->
+                                <g onclick="explainLogoPart('curva-cat')" class="cursor-pointer hover:opacity-100 opacity-90 transition">
+                                    <path d="M 42 22 Q 105 5 168 22" stroke="#FF8200" stroke-width="3" stroke-linecap="round"/>
+                                    <text x="105" y="15" text-anchor="middle" fill="#FFD800" font-family="'Plus Jakarta Sans'" font-weight="700" font-size="11">Feria empresarial</text>
+                                </g>
+
+                                <!-- Comilla izquierda clickeable -->
+                                <g onclick="explainLogoPart('comillas')" class="cursor-pointer group">
+                                    <rect x="2" y="20" width="35" height="35" fill="transparent"/>
+                                    <path d="M 12 48 L 12 30 L 30 30" stroke="#FFD800" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+
+                                <!-- Curva INN clickeable -->
+                                <g onclick="explainLogoPart('curva-inn')" class="cursor-pointer">
+                                    <path id="interactive-inn-wave" d="M 26 40 L 26 62 C 26 73 41 73 41 62 L 41 47 C 41 37 56 37 56 47 L 56 62 C 56 73 71 73 71 62 L 71 47 C 71 37 86 37 86 47 L 86 68" 
+                                          stroke="#FFD800" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+
+                                <!-- Palabra TEGRA -->
+                                <g onclick="explainLogoPart('modernidad')" class="cursor-pointer">
+                                    <text x="95" y="69" fill="#FFFFFF" font-family="'MuseoModerno', sans-serif" font-weight="800" font-size="46" letter-spacing="-1">TEGRA</text>
+                                </g>
+
+                                <!-- Comilla derecha clickeable -->
+                                <g onclick="explainLogoPart('comillas')" class="cursor-pointer">
+                                    <rect x="280" y="20" width="35" height="35" fill="transparent"/>
+                                    <path d="M 288 30 L 306 30 L 306 48" stroke="#FF8200" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+
+                                <text x="242" y="90" text-anchor="middle" fill="#FFD800" font-family="'Plus Jakarta Sans'" font-weight="700" font-size="11">Edición Oficial</text>
+                            </svg>
+
+                            <!-- Botones selectores de partes del logo -->
+                            <div class="flex flex-wrap justify-center gap-2 mt-4">
+                                <button onclick="explainLogoPart('curva-inn')" id="btn-part-curva-inn" class="logo-part-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-inntegra-yellow text-inntegra-violetDeep transition">
+                                    1. La Curva "INN"
+                                </button>
+                                <button onclick="explainLogoPart('comillas')" id="btn-part-comillas" class="logo-part-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-white/15 text-white hover:bg-white/25 transition">
+                                    2. Las Comillas ⌜ ⌝
+                                </button>
+                                <button onclick="explainLogoPart('colores')" id="btn-part-colores" class="logo-part-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-white/15 text-white hover:bg-white/25 transition">
+                                    3. Triada de Color
+                                </button>
+                                <button onclick="explainLogoPart('mascota-cafe')" id="btn-part-mascota-cafe" class="logo-part-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-white/15 text-white hover:bg-white/25 transition">
+                                    4. Mascota Cafetera ☕
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Caja de explicación dinámica -->
+                        <div id="logo-explanation-box" class="bg-white/10 rounded-2xl p-4 border border-white/15 min-h-[118px] flex items-start gap-3.5 transition-all">
+                            <div id="logo-exp-icon" class="w-11 h-11 rounded-xl bg-inntegra-yellow text-inntegra-violetDeep flex items-center justify-center shrink-0 font-extrabold text-xl">
+                                <i class="ph-bold ph-wave-sine"></i>
+                            </div>
+                            <div>
+                                <h3 id="logo-exp-title" class="font-museo font-bold text-inntegra-yellow text-base">
+                                    La Curva "INN": El camino del emprendedor
+                                </h3>
+                                <p id="logo-exp-desc" class="text-xs sm:text-sm text-white/90 mt-1 leading-relaxed">
+                                    Une las tres primeras letras ("INN") en una ruta viva y en constante movimiento: simboliza los giros, retos, aprendizajes y avances de quien construye empresa.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Mini barra de fecha y acceso a animación de la mascota -->
+                        <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/80">
+                            <span class="flex items-center gap-1.5 font-semibold">
+                                <i class="ph-fill ph-calendar-check text-inntegra-yellow text-base"></i> Stands por Categoría
+                            </span>
+                            <button onclick="scrollToSection('inntegra-kids')" class="flex items-center gap-1.5 font-bold text-inntegra-yellow hover:underline">
+                                <i class="ph-fill ph-coffee text-inntegra-orange text-base"></i> Ver Mascota en Acción →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Divisor inferior en curva orgánica -->
+        <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+            <svg class="relative block w-full h-12 sm:h-20" viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,40 C360,110 720,-20 1080,60 C1260,95 1380,50 1440,30 L1440,100 L0,100 Z" fill="#F8F6FF"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN 2: EL CAMINO "INN" (RUTA INTERACTIVA EN CURVA)
+         ========================================== -->
+    <section id="camino-inn" class="py-20 lg:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Encabezado de sección -->
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-inntegra-violetLight text-inntegra-violet font-extrabold text-xs uppercase tracking-widest mb-3">
+                    <i class="ph-bold ph-path"></i> Acompañamiento Real Paso a Paso
+                </span>
+                <h2 class="font-museo text-3xl sm:text-5xl font-extrabold text-inntegra-violetDeep tracking-tight">
+                    Recorre <span class="text-inntegra-violet">La Curva "INN"</span> de tu negocio
+                </h2>
+                <p class="mt-4 text-base sm:text-lg text-slate-600">
+                    Emprender está lleno de giros. Haz clic en cada estación de nuestra curva para descubrir cómo <strong class="text-inntegra-violet">INNTEGRA</strong> respalda tu inversión antes, durante y después de la feria.
+                </p>
+            </div>
+
+            <!-- Selector Interactivo de la Curva del Emprendedor -->
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-inntegra-violet/10 relative">
+                
+                <!-- Línea curva SVG con 5 nodos interactivos -->
+                <div class="relative py-6">
+                    <!-- Curva Desktop -->
+                    <svg class="hidden md:block w-full h-36 overflow-visible" viewBox="0 0 1000 140" fill="none">
+                        <!-- Sombra de la ruta -->
+                        <path d="M 60 95 C 180 15, 220 15, 300 85 C 380 145, 420 145, 500 65 C 580 -5, 620 -5, 700 85 C 780 145, 840 120, 940 45" 
+                              stroke="#EDE5FF" stroke-width="18" stroke-linecap="round"/>
+                        <!-- Ruta activa coloreada -->
+                        <path d="M 60 95 C 180 15, 220 15, 300 85 C 380 145, 420 145, 500 65 C 580 -5, 620 -5, 700 85 C 780 145, 840 120, 940 45" 
+                              stroke="url(#roadGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="12 10"/>
+                        <defs>
+                            <linearGradient id="roadGrad" x1="0" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#5E17EB"/>
+                                <stop offset="50%" stop-color="#FF8200"/>
+                                <stop offset="100%" stop-color="#FFD800"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <!-- Botones de las 5 Estaciones del Camino -->
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 md:-mt-28 relative z-10">
+                        <!-- Paso 1 -->
+                        <button onclick="selectJourneyStep(0)" id="journey-btn-0" class="curve-node active group flex flex-col items-center text-center p-3 rounded-2xl focus:outline-none">
+                            <div class="w-16 h-16 rounded-2xl bg-inntegra-violet text-white font-museo font-extrabold text-xl flex items-center justify-center shadow-violet-glow border-4 border-inntegra-yellow mb-3">
+                                01
+                            </div>
+                            <span class="font-bold text-sm text-inntegra-violetDeep group-hover:text-inntegra-violet">Elección de Stand</span>
+                            <span class="text-xs text-slate-500 mt-0.5">Inversión Justa</span>
+                        </button>
+
+                        <!-- Paso 2 -->
+                        <button onclick="selectJourneyStep(1)" id="journey-btn-1" class="curve-node group flex flex-col items-center text-center p-3 rounded-2xl focus:outline-none md:mt-8">
+                            <div class="w-16 h-16 rounded-2xl bg-inntegra-violetLight text-inntegra-violet font-museo font-extrabold text-xl flex items-center justify-center shadow-md border-4 border-white mb-3">
+                                02
+                            </div>
+                            <span class="font-bold text-sm text-inntegra-violetDeep group-hover:text-inntegra-violet">Escuela & Mentoría</span>
+                            <span class="text-xs text-slate-500 mt-0.5">Preparación Pre-Feria</span>
+                        </button>
+
+                        <!-- Paso 3 -->
+                        <button onclick="selectJourneyStep(2)" id="journey-btn-2" class="curve-node group flex flex-col items-center text-center p-3 rounded-2xl focus:outline-none">
+                            <div class="w-16 h-16 rounded-2xl bg-inntegra-violetLight text-inntegra-violet font-museo font-extrabold text-xl flex items-center justify-center shadow-md border-4 border-white mb-3">
+                                03
+                            </div>
+                            <span class="font-bold text-sm text-inntegra-violetDeep group-hover:text-inntegra-violet">Vitrina Comercial</span>
+                            <span class="text-xs text-slate-500 mt-0.5">Visibilidad Total</span>
+                        </button>
+
+                        <!-- Paso 4 -->
+                        <button onclick="selectJourneyStep(3)" id="journey-btn-3" class="curve-node group flex flex-col items-center text-center p-3 rounded-2xl focus:outline-none md:mt-8">
+                            <div class="w-16 h-16 rounded-2xl bg-inntegra-violetLight text-inntegra-violet font-museo font-extrabold text-xl flex items-center justify-center shadow-md border-4 border-white mb-3">
+                                04
+                            </div>
+                            <span class="font-bold text-sm text-inntegra-violetDeep group-hover:text-inntegra-violet">Rueda de Negocios</span>
+                            <span class="text-xs text-slate-500 mt-0.5">Alianzas e Inversión</span>
+                        </button>
+
+                        <!-- Paso 5 -->
+                        <button onclick="selectJourneyStep(4)" id="journey-btn-4" class="curve-node col-span-2 sm:col-span-1 group flex flex-col items-center text-center p-3 rounded-2xl focus:outline-none">
+                            <div class="w-16 h-16 rounded-2xl bg-inntegra-violetLight text-inntegra-violet font-museo font-extrabold text-xl flex items-center justify-center shadow-md border-4 border-white mb-3">
+                                05
+                            </div>
+                            <span class="font-bold text-sm text-inntegra-violetDeep group-hover:text-inntegra-violet">Comunidad Norte</span>
+                            <span class="text-xs text-slate-500 mt-0.5">Crecimiento Continuo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Panel de Detalle de la Estación Seleccionada -->
+                <div id="journey-detail-card" class="mt-8 bg-gradient-to-br from-inntegra-violetDeep via-inntegra-violet to-inntegra-violetDark rounded-3xl p-6 sm:p-10 text-white relative overflow-hidden transition-all duration-300">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-inntegra-yellow text-inntegra-violetDeep font-extrabold text-xs uppercase" id="journey-tag">
+                                Estación 01 • Valor de marca: Justicia y Transparencia
+                            </div>
+                            <h3 id="journey-title" class="font-museo text-2xl sm:text-4xl font-extrabold text-white">
+                                Tarifas justas y escalonadas según la etapa de tu negocio
+                            </h3>
+                            <p id="journey-desc" class="text-white/90 text-base sm:text-lg leading-relaxed">
+                                En INNTEGRA diseñamos modalidades de participación pensadas para que cada peso invertido en tu stand retorne multiplicado en clientes, posicionamiento publicitario y ventas directas en Cartago y el Norte del Valle.
+                            </p>
+                            <div id="journey-deliverables" class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                                <div class="bg-white/10 rounded-xl p-3 border border-white/15 flex items-center gap-2.5 text-sm font-semibold">
+                                    <i class="ph-fill ph-check-circle text-inntegra-yellow text-lg"></i> Stand vestido y señalizado
+                                </div>
+                                <div class="bg-white/10 rounded-xl p-3 border border-white/15 flex items-center gap-2.5 text-sm font-semibold">
+                                    <i class="ph-fill ph-check-circle text-inntegra-yellow text-lg"></i> Publicidad oficial pre-feria
+                                </div>
+                                <div class="bg-white/10 rounded-xl p-3 border border-white/15 flex items-center gap-2.5 text-sm font-semibold">
+                                    <i class="ph-fill ph-check-circle text-inntegra-yellow text-lg"></i> Ubicación estratégica por sector
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 flex flex-col items-center justify-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
+                            <div id="journey-metric-number" class="font-museo text-5xl font-black text-inntegra-yellow">4x</div>
+                            <div id="journey-metric-label" class="text-sm font-bold text-white mt-1">Proyección de retorno comercial</div>
+                            <p id="journey-metric-sub" class="text-xs text-white/75 mt-2">
+                                Ventas en recinto + nuevos pedidos recurrentes en los meses posteriores al evento.
+                            </p>
+                            <button onclick="openRegistrationModal('general')" class="mt-5 w-full py-3 px-4 rounded-xl bg-inntegra-orange hover:bg-inntegra-yellow text-white hover:text-inntegra-violetDeep font-extrabold text-sm transition">
+                                Reservar en esta etapa →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN 3: PROPÓSITO DE MARCA Y CONFIGURADOR DE INVERSIÓN DE STAND
+         ========================================== -->
+    <section id="proposito" class="py-20 bg-white border-y border-inntegra-violet/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Columna Izquierda: Historia Real & Declaración de Marca (Págs. 15 y 16 del Manual) -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-inntegra-orangeLight text-inntegra-orange font-extrabold text-xs uppercase tracking-widest">
+                        <i class="ph-fill ph-heart-straight"></i> Diferenciador Real de Marca
+                    </div>
+
+                    <h2 class="font-museo text-3xl sm:text-5xl font-extrabold text-inntegra-violetDeep leading-tight">
+                        Más que alquilar un espacio: <span class="text-inntegra-violet underline decoration-inntegra-orange decoration-4 underline-offset-4">impulsamos tu marca.</span>
+                    </h2>
+
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                        <strong>INNTEGRA</strong> nace de la coherencia entre el discurso y la acción. Cada stand adquirido incluye un ecosistema completo de acompañamiento, difusión profesional y flujo garantizado de visitantes para que tu inversión sea altamente rentable.
+                    </p>
+
+                    <!-- Bloque de Origen Empático (Mencionado en la Pág. 15 del Manual) -->
+                    <div class="relative bg-inntegra-surface p-6 rounded-3xl border-l-8 border-inntegra-violet shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-inntegra-violet text-inntegra-yellow flex items-center justify-center shrink-0 text-2xl font-bold">
+                                “
+                            </div>
+                            <div>
+                                <h3 class="font-museo font-bold text-lg text-inntegra-violetDeep">
+                                    Nacida desde la vivencia auténtica de emprender
+                                </h3>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                                    Fundamentada en la experiencia personal del concejal <strong>Jhon Fredy Serna</strong>, quien conoce de primera mano los retos de levantar un negocio en la región y ha impulsado a INNTEGRA como una vitrina competitiva, justa y sostenible para los emprendedores de Cartago y el Norte del Valle.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Los 5 Valores del Manual Interactivos (Pág. 4) -->
+                    <div>
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-3">
+                            Nuestros 5 Pilares de Identidad (Toca para explorar)
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="showValueDetail('empatia')" id="val-btn-empatia" class="val-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-inntegra-violet text-white shadow-sm transition">
+                                💜 Empatía
+                            </button>
+                            <button onclick="showValueDetail('justicia')" id="val-btn-justicia" class="val-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition">
+                                ⚖️ Justicia
+                            </button>
+                            <button onclick="showValueDetail('innovacion')" id="val-btn-innovacion" class="val-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition">
+                                🚀 Innovación
+                            </button>
+                            <button onclick="showValueDetail('colaboracion')" id="val-btn-colaboracion" class="val-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition">
+                                🤝 Colaboración
+                            </button>
+                            <button onclick="showValueDetail('accesibilidad')" id="val-btn-accesibilidad" class="val-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition">
+                                🔓 Accesibilidad
+                            </button>
+                        </div>
+                        <div id="value-detail-text" class="mt-3 p-4 rounded-2xl bg-inntegra-violetLight/60 text-inntegra-violetDeep text-sm font-medium border border-inntegra-violet/15">
+                            <strong>Empatía:</strong> Conocemos de primera mano las dificultades de emprender en el territorio; por eso cada expositor recibe acompañamiento cercano, humano y estratégico.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Configurador de Stand y Simulador de Inversión -->
+                <div class="lg:col-span-6">
+                    <div class="bg-inntegra-violetDeep rounded-3xl p-6 sm:p-8 text-white shadow-2xl relative border-2 border-inntegra-violet">
+                        <div class="flex items-center justify-between border-b border-white/15 pb-4 mb-6">
+                            <div>
+                                <span class="text-xs font-bold text-inntegra-yellow uppercase tracking-wider">Cotizador Oficial en Línea</span>
+                                <h3 class="font-museo text-xl sm:text-2xl font-bold mt-0.5">Configura tu Stand e Inversión</h3>
+                            </div>
+                            <span class="px-3 py-1 rounded-xl bg-inntegra-orange text-white font-extrabold text-xs">
+                                Cupos Limitados
+                            </span>
+                        </div>
+
+                        <!-- Selector de Categoría de Stand -->
+                        <label class="block text-xs font-bold uppercase tracking-wider text-white/75 mb-2">
+                            1. Elige la modalidad de tu Stand:
+                        </label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5">
+                            <button onclick="selectStandPlan('semilla')" id="plan-btn-semilla" class="plan-selector-btn py-2.5 px-2.5 rounded-xl text-xs font-bold bg-inntegra-yellow text-inntegra-violetDeep transition text-center">
+                                🌱 Semilla<br><span class="text-[10px] opacity-80">$220.000</span>
+                            </button>
+                            <button onclick="selectStandPlan('comercial')" id="plan-btn-comercial" class="plan-selector-btn py-2.5 px-2.5 rounded-xl text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition text-center">
+                                🚀 Comercial<br><span class="text-[10px] opacity-80">$350.000</span>
+                            </button>
+                            <button onclick="selectStandPlan('vip')" id="plan-btn-vip" class="plan-selector-btn py-2.5 px-2.5 rounded-xl text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition text-center">
+                                👑 Esquinero VIP<br><span class="text-[10px] opacity-80">$520.000</span>
+                            </button>
+                            <button onclick="selectStandPlan('kids')" id="plan-btn-kids" class="plan-selector-btn py-2.5 px-2.5 rounded-xl text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition text-center font-kids">
+                                ☕ Plan KIDS<br><span class="text-[10px] opacity-80">$120.000</span>
+                            </button>
+                        </div>
+
+                        <!-- Detalles del Plan Seleccionado -->
+                        <div class="bg-gradient-to-br from-inntegra-violet to-inntegra-violetDark rounded-2xl p-5 border-2 border-inntegra-yellow/80 relative mb-5">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <span id="plan-badge" class="text-[11px] font-extrabold uppercase tracking-wider text-inntegra-yellow">
+                                        Ideal para Nuevas Marcas Locales
+                                    </span>
+                                    <h4 id="plan-title" class="font-museo text-2xl font-extrabold text-white">
+                                        Stand Semilla Emprendedor (2x2m)
+                                    </h4>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[10px] uppercase text-white/70 block">Inversión Total</span>
+                                    <div id="plan-price" class="font-museo text-3xl font-black text-inntegra-yellow">
+                                        $220.000 COP
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul id="plan-features" class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-white font-medium">
+                                <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-inntegra-yellow"></i> Módulo 2x2m con mesa y 2 sillas</li>
+                                <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-inntegra-yellow"></i> Cenefa impresa con tu marca</li>
+                                <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-inntegra-yellow"></i> Punto eléctrico e iluminación LED</li>
+                                <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-inntegra-yellow"></i> Capacitación en Escuela Pre-Feria</li>
+                            </ul>
+                        </div>
+
+                        <!-- Potenciadores Opcionales -->
+                        <div class="mb-5">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-white/75 mb-2">
+                                2. Potenciadores opcionales de visibilidad:
+                            </label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                                <label class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/15 cursor-pointer hover:bg-white/10 transition">
+                                    <span class="flex items-center gap-2 font-semibold">
+                                        <input type="checkbox" id="addon-tarima" onchange="recalculatePlanTotal()" class="w-4 h-4 accent-inntegra-yellow rounded">
+                                        <span>🎤 Pitch de 10 min en Tarima</span>
+                                    </span>
+                                    <span class="font-bold text-inntegra-yellow">+$45.000</span>
+                                </label>
+                                <label class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/15 cursor-pointer hover:bg-white/10 transition">
+                                    <span class="flex items-center gap-2 font-semibold">
+                                        <input type="checkbox" id="addon-redes" onchange="recalculatePlanTotal()" class="w-4 h-4 accent-inntegra-yellow rounded">
+                                        <span>📱 Reel Destacado en Redes</span>
+                                    </span>
+                                    <span class="font-bold text-inntegra-yellow">+$60.000</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Proyección y CTA de Reserva -->
+                        <div class="bg-inntegra-orange/20 border border-inntegra-orange/40 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <div class="text-xs text-inntegra-yellow font-bold uppercase">Facilidad de Pago INNTEGRA:</div>
+                                <div id="plan-installment" class="text-xs sm:text-sm font-bold text-white mt-0.5">
+                                    Separa hoy tu cupo con el 50% ($110.000 COP) y paga el saldo antes del evento.
+                                </div>
+                            </div>
+                            <button onclick="openRegistrationWithPlan()" class="w-full sm:w-auto shrink-0 py-3 px-5 rounded-xl bg-inntegra-yellow hover:bg-white text-inntegra-violetDeep font-extrabold text-xs sm:text-sm shadow-lg transition">
+                                Separar este Plan →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN 4: MAPA INTERACTIVO DE PABELLONES Y RESERVA DE STANDS EN VIVO
+         ========================================== -->
+    <section id="mapa-stands" class="py-20 lg:py-28 bg-inntegra-surface relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+                <div>
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-inntegra-violet text-inntegra-yellow font-extrabold text-xs uppercase tracking-widest mb-3">
+                        <i class="ph-fill ph-compass"></i> Explorador Interactivo de la Feria
+                    </span>
+                    <h2 class="font-museo text-3xl sm:text-5xl font-extrabold text-inntegra-violetDeep">
+                        Plano Vivo de <span class="text-inntegra-violet">Pabellones y Stands</span>
+                    </h2>
+                    <p class="mt-2 text-slate-600 max-w-2xl">
+                        Conoce los emprendimientos de Cartago y el Norte del Valle que ya están <strong>"adentro"</strong> o selecciona un <span class="text-emerald-700 font-bold">Stand Disponible</span> para conocer su tarifa y reservar tu ubicación.
+                    </p>
+                </div>
+
+                <!-- Filtros por Pabellón -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterBooths('all')" id="filter-all" class="booth-filter-btn px-4 py-2 rounded-xl text-xs font-extrabold bg-inntegra-violet text-white shadow-sm transition">
+                        Todos (12)
+                    </button>
+                    <button onclick="filterBooths('agro')" id="filter-agro" class="booth-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-inntegra-violetDeep border border-slate-200 hover:border-inntegra-violet transition">
+                        ☕ Café & Agro
+                    </button>
+                    <button onclick="filterBooths('moda')" id="filter-moda" class="booth-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-inntegra-violetDeep border border-slate-200 hover:border-inntegra-violet transition">
+                        🧵 Bordados & Moda
+                    </button>
+                    <button onclick="filterBooths('gastro')" id="filter-gastro" class="booth-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-inntegra-violetDeep border border-slate-200 hover:border-inntegra-violet transition">
+                        🍲 Gastronomía
+                    </button>
+                    <button onclick="filterBooths('kids')" id="filter-kids" class="booth-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-inntegra-yellow text-inntegra-violetDeep font-kids transition">
+                        ☕ Zona KIDS
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenedor del Plano + Inspector de Stand -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Mapa Visual de Stands (8 columnas) -->
+                <div class="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-inntegra-violet/15 blueprint-grid relative">
+                    <!-- Cabecera del plano -->
+                    <div class="flex flex-wrap items-center justify-between gap-4 pb-5 mb-6 border-b border-slate-200">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-inntegra-violet text-inntegra-yellow flex items-center justify-center font-museo font-bold">
+                                INN
+                            </div>
+                            <div>
+                                <h3 class="font-museo font-bold text-inntegra-violetDeep text-base">Recinto Ferial INNTEGRA • Cartago</h3>
+                                <p class="text-xs text-slate-500">Haz clic sobre cualquier módulo para ver el expositor o cotizar</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-bold">
+                            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-inntegra-violet inline-block"></span> Marca Confirmada</span>
+                            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-inntegra-yellow border border-amber-500 inline-block"></span> INNTEGRA KIDS</span>
+                            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-500 inline-block animate-pulse"></span> Stand Disponible</span>
+                        </div>
+                    </div>
+
+                    <!-- Tarima Principal Simbólica -->
+                    <div class="mb-6 bg-gradient-to-r from-inntegra-violetDeep via-inntegra-violet to-inntegra-violetDeep text-white rounded-2xl p-3.5 text-center shadow-md flex items-center justify-center gap-3">
+                        <i class="ph-fill ph-microphone-stage text-inntegra-yellow text-xl"></i>
+                        <span class="font-museo font-bold text-xs sm:text-sm tracking-wide uppercase">
+                            Tarima Central de Visibilización, Rueda de Negocios & Pitch INNTEGRA
+                        </span>
+                    </div>
+
+                    <!-- Grilla de Stands generada dinámicamente por JS -->
+                    <div id="booths-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5">
+                        <!-- Inyectado por JavaScript -->
+                    </div>
+
+                    <!-- Pasillo Central en Curva -->
+                    <div class="mt-6 pt-4 border-t border-dashed border-inntegra-violet/25 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
+                        <span>📍 Acceso Principal de Compradores, Familias e Inversionistas</span>
+                        <span class="font-bold text-inntegra-violet">Señalética Oficial #5E17EB • #FF8200 • #FFD800</span>
+                    </div>
+                </div>
+
+                <!-- Inspector del Stand Seleccionado (4 columnas) -->
+                <div class="lg:col-span-4 bg-inntegra-violetDeep text-white rounded-3xl p-6 sm:p-7 shadow-2xl border-2 border-inntegra-violet relative sticky top-28">
+                    <!-- Comillas de marca -->
+                    <div class="absolute -top-3 -left-3 w-8 h-8 border-t-4 border-l-4 border-inntegra-yellow rounded-tl-lg"></div>
+                    <div class="absolute -top-3 -right-3 w-8 h-8 border-t-4 border-r-4 border-inntegra-orange rounded-tr-lg"></div>
+
+                    <div id="booth-inspector-content">
+                        <!-- Se actualiza al hacer clic en un stand -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN 5: NUEVA MASCOTA OFICIAL (JARRITA CAFETERA RUBBER-HOSE) & UNIVERSO "INNTEGRA KIDS"
+         ========================================== -->
+    <section id="inntegra-kids" class="py-24 relative overflow-hidden bg-gradient-to-b from-[#4B0EC4] via-[#5E17EB] to-[#3B0A99] text-white">
+        <!-- Decoración lúdica flotante -->
+        <div class="absolute top-12 left-8 w-24 h-24 rounded-full bg-inntegra-yellow/15 blur-xl pointer-events-none"></div>
+        <div class="absolute bottom-12 right-10 w-40 h-40 rounded-full bg-inntegra-orange/20 blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Cabecera con el Logotipo Oficial INNTEGRA KIDS -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-inntegra-yellow text-inntegra-violetDeep font-kids font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg mb-4">
+                    <span>☕</span> Nueva Mascota Oficial & Línea INNTEGRA KIDS • Norte del Valle
+                </div>
+
+                <!-- Recreación SVG del Logotipo INNTEGRA KIDS (Página 20 y 24 del Manual) -->
+                <div class="flex justify-center my-4">
+                    <svg class="h-24 sm:h-28 w-auto overflow-visible" viewBox="0 0 340 115" fill="none">
+                        <!-- Burbuja de conversación "KIDS" arriba de GRA (Pág. 19 y 24) -->
+                        <g class="animate-float">
+                            <rect x="195" y="4" width="84" height="36" rx="18" fill="#FFD800" stroke="#FF8200" stroke-width="3"/>
+                            <!-- Triangulito de la burbuja de conversación -->
+                            <path d="M 222 40 L 214 52 L 234 40 Z" fill="#FFD800" stroke="#FF8200" stroke-width="2" stroke-linejoin="round"/>
+                            <!-- Texto KIDS estilo LazyDog -->
+                            <text x="237" y="29" text-anchor="middle" fill="#5E17EB" font-family="'Fredoka', cursive" font-weight="700" font-size="23" letter-spacing="1.5">KIDS</text>
+                        </g>
+
+                        <!-- Comilla izquierda amarilla -->
+                        <path d="M 18 60 L 18 44 L 34 44" stroke="#FFD800" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Curva fluida "INN" -->
+                        <path d="M 30 53 L 30 74 C 30 84 44 84 44 74 L 44 60 C 44 51 58 51 58 60 L 58 74 C 58 84 72 84 72 74 L 72 60 C 72 51 86 51 86 60 L 86 80" 
+                              stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Texto TEGRA -->
+                        <text x="94" y="81" fill="#FFFFFF" font-family="'MuseoModerno', sans-serif" font-weight="800" font-size="45" letter-spacing="-1">TEGRA</text>
+                        
+                        <!-- Comilla derecha naranja -->
+                        <path d="M 290 44 L 306 44 L 306 60" stroke="#FF8200" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <h2 class="font-kids text-3xl sm:text-5xl font-bold text-white leading-tight">
+                    ¡Energía cafetera, creatividad y <span class="text-inntegra-yellow">grandes saltos emprendedores!</span>
+                </h2>
+                <p class="mt-4 text-base sm:text-lg text-white/90 font-normal">
+                    Conoce a nuestra <strong>nueva mascota oficial</strong> —inspirada en la tradición cafetera del Norte del Valle con estética clásica animada bicolor (`#FFFFFF` y `#5E17EB`)— y descubre el pabellón especial <strong>INNTEGRA KIDS</strong> para niños y niñas creadores.
+                </p>
+            </div>
+
+            <!-- Grid Principal: Estudio de Animación de la Nueva Mascota (4 Poses del Video) + Universo KIDS -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Columna Izquierda: Estudio Interactivo de la Nueva Mascota (Basado en el video 00:00 a 00:03) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-inntegra-violetDeep rounded-3xl p-6 sm:p-8 shadow-neo-yellow border-4 border-inntegra-yellow relative">
+                        <!-- Etiqueta superior -->
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-inntegra-violet text-white font-kids font-bold text-xs flex items-center gap-1.5">
+                                <span>☕</span> Mascota Oficial INNTEGRA
+                            </span>
+                            <button onclick="toggleMascotAutoPlay()" id="mascot-autoplay-btn" class="px-3 py-1 rounded-full bg-inntegra-orange text-white font-bold text-xs flex items-center gap-1 hover:bg-inntegra-violetDeep transition shadow">
+                                <i class="ph-fill ph-play" id="autoplay-icon"></i>
+                                <span id="autoplay-text">Animar Video</span>
+                            </button>
+                        </div>
+
+                        <!-- Escenario de la Nueva Mascota (Jarrita de Café Bicolor Rubber-Hose) -->
+                        <div class="bg-gradient-to-b from-white via-inntegra-surface to-inntegra-violetLight/50 rounded-2xl p-5 flex flex-col items-center justify-center relative border-2 border-dashed border-inntegra-violet/25 min-h-[330px]">
+                            
+                            <!-- Indicador de fotograma del video -->
+                            <span id="mascot-frame-badge" class="absolute top-3 left-3 px-2.5 py-0.5 rounded-md bg-inntegra-violet/10 text-inntegra-violet font-extrabold text-[11px]">
+                                Fotograma 01 (00:00) • En Marcha
+                            </span>
+
+                            <!-- Burbuja de diálogo dinámica -->
+                            <div id="mascot-speech-bubble" class="mt-5 mb-2 bg-inntegra-violet text-white font-lazydog text-lg sm:text-xl px-5 py-2.5 rounded-2xl shadow-md relative text-center max-w-xs">
+                                "¡Con toda la energía del café del Norte del Valle! ¡Vamos camino a tu stand en INNTEGRA!"
+                                <div class="w-4 h-4 bg-inntegra-violet rotate-45 absolute -bottom-2 left-1/2 -translate-x-1/2"></div>
+                            </div>
+
+                            <!-- Escenario SVG de la Jarrita Cafetera -->
+                            <div id="mascot-stage" class="animate-mascot cursor-pointer select-none" onclick="cycleMascotPose()" title="Haz clic sobre la mascota para avanzar al siguiente movimiento del video">
+                                <!-- Renderizado dinámico por JS con las 4 poses del video -->
+                            </div>
+                        </div>
+
+                        <!-- Selector de los 4 Movimientos del Video (00:00, 00:01, 00:02, 00:03) -->
+                        <div class="mt-5">
+                            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 text-center mb-2.5">
+                                Secuencia Oficial del Video (Toca cada pose):
+                            </div>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button onclick="setMascotPose('caminando', true)" id="mascot-btn-caminando" class="mascot-pose-btn py-2 px-1.5 rounded-xl font-kids font-bold text-xs bg-inntegra-violet text-white shadow transition">
+                                    🏃 00:00<br><span class="text-[10px] font-normal">Paso Firme</span>
+                                </button>
+                                <button onclick="setMascotPose('firme', true)" id="mascot-btn-firme" class="mascot-pose-btn py-2 px-1.5 rounded-xl font-kids font-bold text-xs bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition">
+                                    😄 00:01<br><span class="text-[10px] font-normal">Sonriente</span>
+                                </button>
+                                <button onclick="setMascotPose('impulso', true)" id="mascot-btn-impulso" class="mascot-pose-btn py-2 px-1.5 rounded-xl font-kids font-bold text-xs bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition">
+                                    😆 00:02<br><span class="text-[10px] font-normal">Impulso</span>
+                                </button>
+                                <button onclick="setMascotPose('salto', true)" id="mascot-btn-salto" class="mascot-pose-btn py-2 px-1.5 rounded-xl font-kids font-bold text-xs bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition">
+                                    🚀 00:03<br><span class="text-[10px] font-normal">¡Salto!</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Qué incluye INNTEGRA KIDS y Reserva Infantil -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- Card 1 -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border-2 border-white/20 hover:border-inntegra-yellow transition">
+                            <div class="w-12 h-12 rounded-2xl bg-inntegra-yellow text-inntegra-violetDeep flex items-center justify-center text-2xl mb-4 shadow-md">
+                                🎨
+                            </div>
+                            <h3 class="font-kids text-xl font-bold text-inntegra-yellow">Muestra de Mini-Empresarios</h3>
+                            <p class="text-sm text-white/90 mt-2 leading-relaxed">
+                                Stands para niños y niñas de 6 a 14 años con proyectos de repostería, artesanías, arte, accesorios, ciencia y creaciones propias listas para vender al público.
+                            </p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border-2 border-white/20 hover:border-inntegra-yellow transition">
+                            <div class="w-12 h-12 rounded-2xl bg-inntegra-orange text-white flex items-center justify-center text-2xl mb-4 shadow-md">
+                                🐷
+                            </div>
+                            <h3 class="font-kids text-xl font-bold text-inntegra-yellow">Educación Financiera & Ventas</h3>
+                            <p class="text-sm text-white/90 mt-2 leading-relaxed">
+                                Experiencia práctica donde aprenden a manejar sus ingresos, atender clientes reales, fijar precios y perder el miedo a hablar en público.
+                            </p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border-2 border-white/20 hover:border-inntegra-yellow transition">
+                            <div class="w-12 h-12 rounded-2xl bg-white text-inntegra-violet flex items-center justify-center text-2xl mb-4 shadow-md">
+                                🏅
+                            </div>
+                            <h3 class="font-kids text-xl font-bold text-inntegra-yellow">Kit Oficial, Diploma y Souvenirs</h3>
+                            <p class="text-sm text-white/90 mt-2 leading-relaxed">
+                                La inscripción al Plan KIDS incluye stand acondicionado, escarapela oficial, diploma de reconocimiento y recordatorios con nuestra mascota cafetera.
+                            </p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="bg-inntegra-yellow text-inntegra-violetDeep rounded-3xl p-6 border-2 border-white shadow-xl flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-extrabold uppercase tracking-wider bg-inntegra-violet text-white px-2.5 py-1 rounded-full">
+                                        Tarifa Preferencial KIDS
+                                    </span>
+                                    <span class="font-museo font-black text-lg text-inntegra-violet">$120.000</span>
+                                </div>
+                                <h3 class="font-kids text-2xl font-bold mt-3 leading-snug">
+                                    ¿Tienes un pequeño emprendedor en casa o en tu colegio?
+                                </h3>
+                                <p class="text-xs sm:text-sm font-semibold text-inntegra-violetDeep/80 mt-1">
+                                    Adquiere su stand infantil con acompañamiento pedagógico y mobiliario incluido.
+                                </p>
+                            </div>
+                            <button onclick="openRegistrationModal('kids')" class="mt-4 w-full py-3 px-4 rounded-2xl bg-inntegra-violet hover:bg-inntegra-violetDeep text-white font-kids font-bold text-base shadow-lg transition flex items-center justify-center gap-2">
+                                <span>Reservar Stand INNTEGRA KIDS</span>
+                                <i class="ph-bold ph-magic-wand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN 6: APLICACIONES DE MARCA Y KIT DEL EMPRENDEDOR (CON LA NUEVA MASCOTA)
+         ========================================== -->
+    <section id="identidad-merch" class="py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-inntegra-violetLight text-inntegra-violet font-extrabold text-xs uppercase tracking-widest mb-3">
+                    <i class="ph-fill ph-t-shirt"></i> Aplicaciones Oficiales del Manual (Págs. 13 y 24)
+                </span>
+                <h2 class="font-museo text-3xl sm:text-5xl font-extrabold text-inntegra-violetDeep">
+                    Una identidad que se viste con <span class="text-inntegra-violet">orgullo local</span>
+                </h2>
+                <p class="mt-3 text-slate-600">
+                    Personaliza en vivo las piezas oficiales de la feria: camisetas para expositores, mugs y tote bags con el logotipo de <strong>INNTEGRA</strong>, <strong>INNTEGRA KIDS</strong> o nuestra <strong>Mascota Cafetera Oficial</strong>.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-inntegra-surface rounded-3xl p-6 sm:p-10 border border-inntegra-violet/15">
+                
+                <!-- Controles de Personalización (5 columnas) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-2.5">
+                            1. Elige la pieza oficial del Manual:
+                        </label>
+                        <div class="grid grid-cols-3 gap-2.5">
+                            <button onclick="setMerchItem('shirt')" id="merch-item-shirt" class="merch-item-btn py-3 px-3 rounded-2xl font-bold text-xs sm:text-sm bg-inntegra-violet text-white shadow transition flex flex-col items-center gap-1">
+                                <i class="ph-duotone ph-t-shirt text-2xl"></i> Camiseta Oficial
+                            </button>
+                            <button onclick="setMerchItem('mug')" id="merch-item-mug" class="merch-item-btn py-3 px-3 rounded-2xl font-bold text-xs sm:text-sm bg-white text-inntegra-violetDeep border border-slate-200 hover:border-inntegra-violet transition flex flex-col items-center gap-1">
+                                <i class="ph-duotone ph-coffee text-2xl"></i> Mug Emprendedor
+                            </button>
+                            <button onclick="setMerchItem('tote')" id="merch-item-tote" class="merch-item-btn py-3 px-3 rounded-2xl font-bold text-xs sm:text-sm bg-white text-inntegra-violetDeep border border-slate-200 hover:border-inntegra-violet transition flex flex-col items-center gap-1">
+                                <i class="ph-duotone ph-handbag text-2xl"></i> Tote Bag Feria
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-2.5">
+                            2. Paleta Oficial (Pág. 8 y 13 del Manual):
+                        </label>
+                        <div class="grid grid-cols-4 gap-3">
+                            <button onclick="setMerchColor('violet')" class="group flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-white border-2 border-inntegra-violet shadow-sm">
+                                <span class="w-10 h-10 rounded-xl bg-[#5E17EB] block shadow-inner"></span>
+                                <span class="text-[11px] font-bold text-slate-700">#5E17EB</span>
+                            </button>
+                            <button onclick="setMerchColor('yellow')" class="group flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-white border border-slate-200 hover:border-inntegra-violet">
+                                <span class="w-10 h-10 rounded-xl bg-[#FFD800] block shadow-inner"></span>
+                                <span class="text-[11px] font-bold text-slate-700">#FFD800</span>
+                            </button>
+                            <button onclick="setMerchColor('orange')" class="group flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-white border border-slate-200 hover:border-inntegra-violet">
+                                <span class="w-10 h-10 rounded-xl bg-[#FF8200] block shadow-inner"></span>
+                                <span class="text-[11px] font-bold text-slate-700">#FF8200</span>
+                            </button>
+                            <button onclick="setMerchColor('white')" class="group flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-white border border-slate-200 hover:border-inntegra-violet">
+                                <span class="w-10 h-10 rounded-xl bg-white border border-slate-300 block shadow-inner"></span>
+                                <span class="text-[11px] font-bold text-slate-700">Blanco</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-2.5">
+                            3. Versión de Estampado Oficial:
+                        </label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="setMerchBrand('main')" id="merch-brand-main" class="py-2.5 px-2.5 rounded-xl font-bold text-xs bg-inntegra-violetDeep text-white transition">
+                                Logo INNTEGRA
+                            </button>
+                            <button onclick="setMerchBrand('kids')" id="merch-brand-kids" class="py-2.5 px-2.5 rounded-xl font-bold text-xs bg-white text-inntegra-violetDeep border border-slate-200 transition">
+                                INNTEGRA KIDS
+                            </button>
+                            <button onclick="setMerchBrand('mascot')" id="merch-brand-mascot" class="py-2.5 px-2.5 rounded-xl font-bold text-xs bg-white text-inntegra-violetDeep border border-slate-200 transition">
+                                ☕ Mascota + Logo
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-inntegra-violetLight/60 border border-inntegra-violet/15 text-xs text-inntegra-violetDeep leading-relaxed">
+                        <strong class="block font-bold mb-0.5">💡 Kit de Expositor Incluido en tu Stand:</strong>
+                        Al separar tu stand recibes escarapelas oficiales, material publicitario digital personalizado con el sello INNTEGRA y acceso preferencial al merchandising de la feria.
+                    </div>
+                </div>
+
+                <!-- Previsualizador Vectorial en Vivo (7 columnas) -->
+                <div class="lg:col-span-7 flex flex-col items-center justify-center bg-white rounded-3xl p-8 shadow-inner border border-slate-200 min-h-[380px] relative">
+                    <span id="merch-badge-label" class="absolute top-4 right-4 px-3 py-1 rounded-full bg-inntegra-surface text-inntegra-violet font-bold text-xs">
+                        Vista Previa: Camiseta #5E17EB
+                    </span>
+
+                    <!-- Lienzo SVG del Producto -->
+                    <div id="merch-preview-canvas" class="w-full max-w-sm flex items-center justify-center transition-all duration-300">
+                        <!-- Renderizado por JS -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER INSTITUCIONAL (CON IDENTIDAD COMPLETA)
+         ========================================== -->
+    <footer class="bg-inntegra-violetDeep text-white pt-16 pb-12 border-t-4 border-inntegra-orange relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/15">
+                
+                <!-- Columna 1: Marca -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="inline-block">
+                        <svg class="h-12 w-auto overflow-visible" viewBox="0 0 300 72" fill="none">
+                            <path d="M 10 30 L 10 16 L 24 16" stroke="#FFD800" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 22 25 L 22 44 C 22 53 35 53 35 44 L 35 31 C 35 23 48 23 48 31 L 48 44 C 48 53 60 53 60 44 L 60 31 C 60 23 73 23 73 31 L 73 50" 
+                                  stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="81" y="51" fill="#FFFFFF" font-family="'MuseoModerno', sans-serif" font-weight="800" font-size="43" letter-spacing="-1">TEGRA</text>
+                            <path d="M 276 16 L 290 16 L 290 30" stroke="#FF8200" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm text-white/80 max-w-sm leading-relaxed">
+                        Principal plataforma profesional de visibilización comercial, relacionamiento y acompañamiento real a los emprendedores y niños creadores de <strong>Cartago y el Norte del Valle del Cauca</strong>.
+                    </p>
+                    <div class="flex items-center gap-3 pt-1">
+                        <span class="px-3 py-1 rounded-lg bg-white/10 text-xs font-bold text-inntegra-yellow">#EstásAdentro</span>
+                        <span class="px-3 py-1 rounded-lg bg-white/10 text-xs font-bold text-inntegra-orange">#FeriaINNTEGRA</span>
+                        <span class="px-3 py-1 rounded-lg bg-white/10 text-xs font-bold text-white">#NorteDelValle</span>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Navegación Rápida -->
+                <div class="md:col-span-3 space-y-2.5 text-sm">
+                    <h4 class="font-museo font-bold text-inntegra-yellow uppercase tracking-wider text-xs">Plataforma</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#camino-inn" class="hover:text-inntegra-yellow transition">El Camino del Emprendedor</a></li>
+                        <li><a href="#proposito" class="hover:text-inntegra-yellow transition">Planes de Stand & Cotizador</a></li>
+                        <li><a href="#mapa-stands" class="hover:text-inntegra-yellow transition">Plano Interactivo de Stands</a></li>
+                        <li><a href="#inntegra-kids" class="hover:text-inntegra-yellow transition">Mascota Oficial & INNTEGRA KIDS</a></li>
+                        <li><a href="#identidad-merch" class="hover:text-inntegra-yellow transition">Manual & Aplicaciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Convocatoria y Contacto -->
+                <div class="md:col-span-4 space-y-3 text-sm">
+                    <h4 class="font-museo font-bold text-inntegra-yellow uppercase tracking-wider text-xs">Sede & Impulso</h4>
+                    <p class="text-white/80 flex items-start gap-2">
+                        <i class="ph-fill ph-map-pin text-inntegra-orange text-lg shrink-0 mt-0.5"></i>
+                        <span>Cartago y municipios del Norte del Valle del Cauca, Colombia.</span>
+                    </p>
+                    <p class="text-white/80 flex items-start gap-2">
+                        <i class="ph-fill ph-users-three text-inntegra-yellow text-lg shrink-0 mt-0.5"></i>
+                        <span>Iniciativa con propósito social y estándar empresarial impulsada desde la empatía emprendedora (Concejal Jhon Fredy Serna & Red de Aliados Locales).</span>
+                    </p>
+                    <div class="pt-2">
+                        <button onclick="openRegistrationModal('aliado')" class="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-inntegra-yellow hover:text-inntegra-violetDeep text-white font-bold text-xs border border-white/20 transition">
+                            🤝 Quiero sumarme como Patrocinador / Aliado Oficial
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
+                <p>© 2026 Feria Empresarial INNTEGRA & INNTEGRA KIDS. Todos los derechos reservados.</p>
+                <p class="italic">Tipografías: Museo Moderno • Codec Pro Web • LazyDog Kids | Paleta: #5E17EB • #FF8200 • #FFD800</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         BOTÓN FLOTANTE CON LA NUEVA MASCOTA CAFETERA BICOLOR (Esquina inferior derecha)
+         ========================================== -->
+    <div class="fixed bottom-5 right-5 z-40 flex flex-col items-end">
+        <!-- Globito de ayuda rápida -->
+        <div id="floating-mascot-tip" class="mb-2 bg-white text-inntegra-violetDeep px-4 py-2.5 rounded-2xl shadow-xl border-2 border-inntegra-violet text-xs font-bold max-w-[245px] flex items-center justify-between gap-2">
+            <span>☕ ¡Hola! ¿Listo para cotizar y reservar tu stand en INNTEGRA?</span>
+            <button onclick="document.getElementById('floating-mascot-tip').classList.add('hidden')" class="text-slate-400 hover:text-slate-700">
+                <i class="ph-bold ph-x"></i>
+            </button>
+        </div>
+
+        <button onclick="openRegistrationModal('general')" class="group relative w-16 h-16 rounded-full bg-white p-1 shadow-violet-glow border-4 border-inntegra-violet hover:scale-110 transition-transform focus:outline-none" title="Reservar Stand con nuestra Mascota Oficial">
+            <!-- Mini Avatar SVG de la Nueva Mascota (Jarrita de Café Bicolor Blanca/Violeta) -->
+            <svg viewBox="0 0 100 100" class="w-full h-full overflow-visible">
+                <!-- Gotas de café salpicando -->
+                <path d="M 30 16 C 24 6, 36 4, 38 14" fill="#5C2C16"/>
+                <circle cx="24" cy="10" r="3" fill="#5C2C16"/>
+                <circle cx="68" cy="11" r="2.8" fill="#5C2C16"/>
+                <!-- Asa derecha -->
+                <path d="M 74 36 C 90 36, 90 68, 72 68" fill="none" stroke="#5E17EB" stroke-width="7" stroke-linecap="round"/>
+                <path d="M 74 36 C 87 36, 87 68, 72 68" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                <!-- Mitad izquierda Blanca de la jarrita -->
+                <path d="M 20 24 L 50 24 L 50 84 L 28 84 C 16 72, 18 52, 24 38 Z" fill="#FFFFFF"/>
+                <!-- Mitad derecha Violeta de la jarrita -->
+                <path d="M 50 24 L 80 24 L 76 38 C 82 52, 84 72, 72 84 L 50 84 Z" fill="#5E17EB"/>
+                <!-- Contorno de la jarrita -->
+                <path d="M 20 24 L 80 24 L 76 38 C 82 52, 84 72, 72 84 L 28 84 C 16 72, 18 52, 24 38 Z" fill="none" stroke="#5E17EB" stroke-width="4" stroke-linejoin="round"/>
+                <!-- Boca superior con café -->
+                <ellipse cx="50" cy="24" rx="30" ry="6.5" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                <ellipse cx="50" cy="24" rx="23" ry="4" fill="#5C2C16"/>
+                <!-- Ojos estilo Pie-Eye -->
+                <ellipse cx="38" cy="46" rx="5.5" ry="8" fill="#FFFFFF" stroke="#5E17EB" stroke-width="2.5"/>
+                <ellipse cx="40" cy="47" rx="3.2" ry="5" fill="#5E17EB"/>
+                <ellipse cx="55" cy="46" rx="5.5" ry="8" fill="#FFFFFF" stroke="#5E17EB" stroke-width="2.5"/>
+                <ellipse cx="53" cy="47" rx="3.2" ry="5" fill="#5E17EB"/>
+                <!-- Sonrisa -->
+                <path d="M 35 60 Q 47 74 60 60 Z" fill="#5E17EB" stroke="#FFFFFF" stroke-width="1.5"/>
+                <path d="M 39 61 L 55 61 L 54 65 L 40 65 Z" fill="#FFFFFF"/>
+            </svg>
+            <span class="absolute -top-1 -left-1 bg-inntegra-orange text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-white">
+                STAND
+            </span>
+        </button>
+    </div>
+
+    <!-- ==========================================
+         MODAL INTERACTIVO DE RESERVA DE STAND Y GENERADOR DE CREDENCIAL "INN"
+         ========================================== -->
+    <div id="registration-modal" class="fixed inset-0 z-50 hidden bg-inntegra-violetDeep/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border-4 border-inntegra-yellow relative my-8">
+            
+            <!-- Botón Cerrar -->
+            <button onclick="closeRegistrationModal()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 hover:bg-inntegra-violet hover:text-white text-slate-600 flex items-center justify-center transition">
+                <i class="ph-bold ph-x text-lg"></i>
+            </button>
+
+            <!-- Vista 1: Formulario de Reserva Comercial -->
+            <div id="modal-form-view">
+                <div class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-inntegra-violet mb-2">
+                    <span class="px-2.5 py-1 rounded-md bg-inntegra-violetLight">Reserva Oficial de Stand</span>
+                    <span id="modal-selected-booth-badge" class="hidden px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800"></span>
+                </div>
+
+                <h3 class="font-museo text-2xl sm:text-3xl font-extrabold text-inntegra-violetDeep">
+                    ¡Asegura tu lugar adentro de <span class="text-inntegra-violet">INNTEGRA</span>!
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                    Completa tus datos para bloquear tu ubicación, recibir las instrucciones de pago y generar al instante tu <strong>Credencial Oficial de Expositor</strong>.
+                </p>
+
+                <!-- Selector de Categoría de Participación -->
+                <div class="grid grid-cols-3 gap-2 my-5">
+                    <button type="button" onclick="setModalCategory('general')" id="modal-cat-general" class="py-2.5 px-3 rounded-xl font-bold text-xs bg-inntegra-violet text-white shadow transition">
+                        🚀 Stand Empresarial
+                    </button>
+                    <button type="button" onclick="setModalCategory('kids')" id="modal-cat-kids" class="py-2.5 px-3 rounded-xl font-bold text-xs bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-yellow/40 transition font-kids">
+                        ☕ INNTEGRA KIDS
+                    </button>
+                    <button type="button" onclick="setModalCategory('aliado')" id="modal-cat-aliado" class="py-2.5 px-3 rounded-xl font-bold text-xs bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition">
+                        🤝 Patrocinador / Aliado
+                    </button>
+                </div>
+
+                <form id="inntegra-form" onsubmit="handleRegistrationSubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1" id="label-project-name">Nombre del Emprendimiento / Marca *</label>
+                            <input type="text" id="input-project" required placeholder="Ej. Café Especial El Roble" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-inntegra-violet focus:ring-2 focus:ring-inntegra-violet/20 outline-none text-sm font-medium">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1" id="label-founder-name">Nombre del Representante *</label>
+                            <input type="text" id="input-founder" required placeholder="Ej. Valentina Gómez" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-inntegra-violet focus:ring-2 focus:ring-inntegra-violet/20 outline-none text-sm font-medium">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Municipio (Norte del Valle) *</label>
+                            <select id="input-city" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-inntegra-violet outline-none text-sm font-medium bg-white">
+                                <option value="Cartago">Cartago</option>
+                                <option value="Ansermanuevo">Ansermanuevo</option>
+                                <option value="Alcalá">Alcalá</option>
+                                <option value="Obando">Obando</option>
+                                <option value="La Unión">La Unión</option>
+                                <option value="Zarzal">Zarzal</option>
+                                <option value="Roldanillo">Roldanillo</option>
+                                <option value="Toro / Ulloa / El Águila">Toro / Ulloa / El Águila</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Plan / Modalidad de Stand *</label>
+                            <select id="input-plan" onchange="updateModalRateDisplay()" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-inntegra-violet outline-none text-sm font-medium bg-white">
+                                <option value="Stand Semilla ($220.000 COP)">Stand Semilla ($220.000 COP)</option>
+                                <option value="Stand Comercial ($350.000 COP)">Stand Comercial ($350.000 COP)</option>
+                                <option value="Stand Esquinero VIP ($520.000 COP)">Stand Esquinero VIP ($520.000 COP)</option>
+                                <option value="Stand INNTEGRA KIDS ($120.000 COP)">Stand INNTEGRA KIDS ($120.000 COP)</option>
+                                <option value="Vinculación Patrocinador / Aliado">Vinculación Patrocinador / Aliado</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp de Contacto *</label>
+                            <input type="tel" id="input-phone" required placeholder="310 000 0000" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-inntegra-violet outline-none text-sm font-medium">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Pabellón / Sector *</label>
+                            <select id="input-sector" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-inntegra-violet outline-none text-sm font-medium bg-white">
+                                <option value="Café, Agro y Transformación">Café, Agro y Transformación</option>
+                                <option value="Moda, Bordados y Artesanía">Moda, Bordados y Artesanía</option>
+                                <option value="Gastronomía y Repostería">Gastronomía y Repostería</option>
+                                <option value="Tecnología y Servicios">Tecnología y Servicios</option>
+                                <option value="Pabellón Infantil INNTEGRA KIDS">Pabellón Infantil INNTEGRA KIDS</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Productos o Servicios a Exhibir</label>
+                            <input type="text" id="input-desc" placeholder="Ej. Café tostado en grano, degustación..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-inntegra-violet outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div class="bg-inntegra-surface p-3.5 rounded-2xl border border-inntegra-violet/15 flex items-center justify-between text-xs">
+                        <span class="font-semibold text-inntegra-violetDeep flex items-center gap-2">
+                            <i class="ph-fill ph-seal-check text-inntegra-violet text-lg"></i>
+                            Modalidad seleccionada (separa con el 50%):
+                        </span>
+                        <span id="modal-rate-summary" class="font-museo font-black text-sm sm:text-base text-inntegra-violet">Stand Semilla ($220.000 COP)</span>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-2xl bg-inntegra-violet hover:bg-inntegra-violetDeep text-white font-extrabold text-base shadow-violet-glow transition flex items-center justify-center gap-2">
+                        <span>Pre-Reservar Stand y Generar Credencial Oficial</span>
+                        <i class="ph-bold ph-identification-badge text-xl text-inntegra-yellow"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Vista 2: Credencial Digital Generada ("Ya estás adentro") -->
+            <div id="modal-credential-view" class="hidden text-center space-y-5">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-xs uppercase">
+                    <i class="ph-fill ph-check-circle text-base"></i> ¡Solicitud de Stand Registrada! Ya estás adentro
+                </div>
+
+                <!-- Tarjeta Credencial Oficial con las Comillas del Manual -->
+                <div class="max-w-md mx-auto bg-gradient-to-br from-inntegra-violet via-inntegra-violetDark to-inntegra-violetDeep text-white rounded-3xl p-6 sm:p-7 shadow-2xl relative text-left border-2 border-inntegra-yellow">
+                    <!-- Comillas oficiales -->
+                    <div class="absolute top-3 left-3 w-7 h-7 border-t-4 border-l-4 border-inntegra-yellow rounded-tl-md"></div>
+                    <div class="absolute top-3 right-3 w-7 h-7 border-t-4 border-r-4 border-inntegra-orange rounded-tr-md"></div>
+
+                    <div class="flex items-center justify-between border-b border-white/15 pb-4 mt-2">
+                        <div>
+                            <div class="font-museo font-black text-2xl tracking-tight text-white">
+                                <span class="text-inntegra-yellow">inn</span>tegra
+                            </div>
+                            <div id="cred-type-badge" class="text-[11px] font-bold uppercase tracking-wider text-inntegra-orange">
+                                Expositor Oficial • Stand Reservado
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] uppercase text-white/60 block">Código Reserva</span>
+                            <span id="cred-code" class="font-museo font-bold text-sm text-inntegra-yellow">INN-2026-841</span>
+                        </div>
+                    </div>
+
+                    <div class="py-5 space-y-3">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-wider text-white/60 block">Emprendimiento / Proyecto</span>
+                            <h4 id="cred-project" class="font-museo text-2xl font-extrabold text-inntegra-yellow leading-tight">Café Especial El Roble</h4>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 pt-1">
+                            <div>
+                                <span class="text-[10px] uppercase tracking-wider text-white/60 block">Representante</span>
+                                <p id="cred-founder" class="font-bold text-sm text-white">Valentina Gómez</p>
+                            </div>
+                            <div>
+                                <span class="text-[10px] uppercase tracking-wider text-white/60 block">Origen</span>
+                                <p id="cred-city" class="font-bold text-sm text-white">Cartago, Valle</p>
+                            </div>
+                        </div>
+                        <div class="pt-1 flex items-center justify-between bg-white/10 rounded-xl p-3 border border-white/15">
+                            <div>
+                                <span class="text-[10px] uppercase tracking-wider text-white/70 block">Pabellón & Plan Seleccionado</span>
+                                <p id="cred-sector" class="font-bold text-xs text-inntegra-yellow">Café, Agro y Transformación</p>
+                            </div>
+                            <span id="cred-plan-tag" class="px-2.5 py-1 rounded-lg bg-inntegra-orange text-white font-extrabold text-[11px]">
+                                $220.000 COP
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 border-t border-white/15 flex items-center justify-between text-[11px] text-white/75">
+                        <span>"En INNTEGRA no estás solo, estás adentro"</span>
+                        <span class="font-bold text-inntegra-yellow">Norte del Valle</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-3 pt-2">
+                    <button onclick="copyCredentialCode()" id="copy-cred-btn" class="px-5 py-3 rounded-xl bg-inntegra-violet text-white font-bold text-xs sm:text-sm hover:bg-inntegra-violetDeep transition flex items-center justify-center gap-2">
+                        <i class="ph-bold ph-copy"></i> Copiar Datos de mi Reserva
+                    </button>
+                    <button onclick="closeRegistrationModal()" class="px-5 py-3 rounded-xl bg-slate-100 text-slate-700 font-bold text-xs sm:text-sm hover:bg-slate-200 transition">
+                        Volver a la Feria
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==========================================
+         LÓGICA INTERACTIVA COMPLETA (JAVASCRIPT)
+         ========================================== -->
+    <script>
+        /* ----------------------------------------------------------
+           1. EXPLICADOR INTERACTIVO DE SIMBOLOGÍA DEL LOGOTIPO (Págs. 5-8)
+           ---------------------------------------------------------- */
+        const logoPartsData = {
+            'curva-inn': {
+                icon: 'ph-wave-sine',
+                title: 'La Curva "INN": El camino del emprendedor',
+                desc: 'Une las tres primeras letras ("INN") en una gran curva fluida que simboliza la ruta del emprendedor: llena de giros, retos, aprendizajes y avances constantes.'
+            },
+            'comillas': {
+                icon: 'ph-quotes',
+                title: 'Las Comillas ⌜ ⌝: Un abrazo gráfico de pertenencia',
+                desc: 'Enmarcan el nombre haciendo alusión a "INN" ("adentro" en inglés). Funcionan como un abrazo gráfico de inclusión, protección y comunidad en Cartago y el Norte del Valle.'
+            },
+            'colores': {
+                icon: 'ph-palette',
+                title: 'Violeta (#5E17EB), Naranja (#FF8200) y Amarillo (#FFD800)',
+                desc: 'El Violeta proyecta liderazgo y transformación; el Naranja transmite vitalidad e impulso comercial; el Amarillo ilumina la oportunidad y el crecimiento.'
+            },
+            'mascota-cafe': {
+                icon: 'ph-coffee',
+                title: 'Nueva Mascota Oficial: La Jarrita Cafetera INNTEGRA',
+                desc: 'Inspirada en el ADN cafetero del Norte del Valle con estética clásica animada bicolor (blanco y violeta #5E17EB), salpicando energía y dando grandes saltos de éxito.'
+            },
+            'curva-cat': {
+                icon: 'ph-tag',
+                title: 'Curva de Categorización Superior',
+                desc: 'Elemento oficial del manual que identifica el carácter de "Feria empresarial" manteniendo el dinamismo orgánico del logotipo.'
+            },
+            'modernidad': {
+                icon: 'ph-text-aa',
+                title: 'Tipografía Oficial Museo Moderno',
+                desc: 'Estilo geométrico, limpio y contemporáneo que posiciona a INNTEGRA al nivel de las grandes vitrinas empresariales del país.'
+            }
+        };
+
+        function explainLogoPart(partKey) {
+            const data = logoPartsData[partKey] || logoPartsData['curva-inn'];
+            document.getElementById('logo-exp-title').textContent = data.title;
+            document.getElementById('logo-exp-desc').textContent = data.desc;
+            document.getElementById('logo-exp-icon').innerHTML = `<i class="ph-bold ${data.icon}"></i>`;
+
+            document.querySelectorAll('.logo-part-btn').forEach(btn => {
+                btn.className = 'logo-part-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-white/15 text-white hover:bg-white/25 transition';
+            });
+            const activeBtn = document.getElementById(`btn-part-${partKey}`);
+            if (activeBtn) {
+                activeBtn.className = 'logo-part-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-inntegra-yellow text-inntegra-violetDeep shadow transition';
+            }
+        }
+
+        /* ----------------------------------------------------------
+           2. EL CAMINO "INN" (5 ESTACIONES DE LA CURVA)
+           ---------------------------------------------------------- */
+        const journeySteps = [
+            {
+                tag: 'Estación 01 • Valor de marca: Justicia y Transparencia',
+                title: 'Tarifas justas y escalonadas según la etapa de tu negocio',
+                desc: 'En INNTEGRA diseñamos modalidades de participación pensadas para que cada peso invertido en tu stand retorne multiplicado en clientes, posicionamiento publicitario y ventas directas.',
+                deliverables: ['Stand vestido y señalizado', 'Publicidad oficial pre-feria', 'Ubicación estratégica por sector'],
+                metricNumber: '4x',
+                metricLabel: 'Proyección de retorno comercial',
+                metricSub: 'Ventas en recinto + nuevos pedidos recurrentes tras el evento.'
+            },
+            {
+                tag: 'Estación 02 • Valor de marca: Empatía e Innovación',
+                title: 'Escuela Pre-Feria y Mentoría Personalizada',
+                desc: 'Tu inversión incluye preparación previa en exhibición de producto (visual merchandising), estructura de costos, cierres de venta, pagos digitales y narrativa comercial.',
+                deliverables: ['Talleres prácticos previos', 'Asesoría en imagen de marca', 'Kit digital de difusión con tu logo'],
+                metricNumber: '+12h',
+                metricLabel: 'De formación aplicada real',
+                metricSub: 'Acompañamiento pensado para maximizar tus ventas durante la feria.'
+            },
+            {
+                tag: 'Estación 03 • Valor de marca: Visibilidad Profesional',
+                title: 'Vitrina Ferial con Estándares de Nivel Nacional',
+                desc: 'Tu negocio se presenta en un recinto vibrante, señalizado con la identidad de INNTEGRA, con flujo masivo de familias, compradores locales, medios regionales y creadores de contenido.',
+                deliverables: ['Mobiliario y cenefa oficial', 'Cubrimiento en redes y prensa', 'Tarima para muestras en vivo'],
+                metricNumber: '100%',
+                metricLabel: 'De tus ventas van directo a ti',
+                metricSub: 'Sin comisiones sobre las transacciones que realices en tu stand.'
+            },
+            {
+                tag: 'Estación 04 • Valor de marca: Colaboración Estratégica',
+                title: 'Conexión con Inversionistas, Universidades y Aliados',
+                desc: 'Conectamos a los expositores con el público secundario estratégico del manual: instituciones financieras, universidades, proveedores mayoristas y compradores corporativos.',
+                deliverables: ['Rueda de conexiones B2B', 'Acceso a líneas de crédito', 'Alianzas con otros empresarios'],
+                metricNumber: '+25',
+                metricLabel: 'Entidades y aliados conectados',
+                metricSub: 'Legitimidad institucional para escalar tu empresa en la región.'
+            },
+            {
+                tag: 'Estación 05 • Valor de marca: Comunidad Sostenible',
+                title: 'Red Permanente del Norte del Valle',
+                desc: 'Cuando termina la feria, sigues "ADENTRO". Pasas a formar parte del directorio oficial de marcas INNTEGRA e INNTEGRA KIDS con beneficios preferenciales en próximas ediciones.',
+                deliverables: ['Directorio web permanente', 'Seguimiento post-feria', 'Descuento de fidelidad en nuevas ediciones'],
+                metricNumber: '365',
+                metricLabel: 'Días en comunidad activa',
+                metricSub: 'En INNTEGRA el emprendedor construye relaciones duraderas.'
+            }
+        ];
+
+        function selectJourneyStep(index) {
+            const step = journeySteps[index];
+            document.getElementById('journey-tag').textContent = step.tag;
+            document.getElementById('journey-title').textContent = step.title;
+            document.getElementById('journey-desc').textContent = step.desc;
+            document.getElementById('journey-metric-number').textContent = step.metricNumber;
+            document.getElementById('journey-metric-label').textContent = step.metricLabel;
+            document.getElementById('journey-metric-sub').textContent = step.metricSub;
+
+            const delivContainer = document.getElementById('journey-deliverables');
+            delivContainer.innerHTML = step.deliverables.map(item => `
+                <div class="bg-white/10 rounded-xl p-3 border border-white/15 flex items-center gap-2.5 text-sm font-semibold">
+                    <i class="ph-fill ph-check-circle text-inntegra-yellow text-lg"></i> ${item}
+                </div>
+            `).join('');
+
+            for (let i = 0; i < 5; i++) {
+                const btn = document.getElementById(`journey-btn-${i}`);
+                const circle = btn.querySelector('div');
+                if (i === index) {
+                    btn.classList.add('active');
+                    circle.className = 'w-16 h-16 rounded-2xl bg-inntegra-violet text-white font-museo font-extrabold text-xl flex items-center justify-center shadow-violet-glow border-4 border-inntegra-yellow mb-3';
+                } else {
+                    btn.classList.remove('active');
+                    circle.className = 'w-16 h-16 rounded-2xl bg-inntegra-violetLight text-inntegra-violet font-museo font-extrabold text-xl flex items-center justify-center shadow-md border-4 border-white mb-3';
+                }
+            }
+        }
+
+        /* ----------------------------------------------------------
+           3. VALORES Y CONFIGURADOR DE INVERSIÓN DE STAND
+           ---------------------------------------------------------- */
+        const brandValues = {
+            empatia: '<strong>Empatía:</strong> Conocemos de primera mano las dificultades de emprender; por eso escuchamos y acompañamos cada historia real.',
+            justicia: '<strong>Justicia:</strong> Tarifas transparentes y proporcionales que incluyen todo el respaldo logístico, formativo y publicitario.',
+            innovacion: '<strong>Innovación:</strong> Creamos experiencias frescas, dinámicas y modernas que dignifican al empresario del Norte del Valle.',
+            colaboracion: '<strong>Colaboración:</strong> Creemos profundamente en el crecimiento colectivo entre emprendedores, universidades y sector privado.',
+            accesibilidad: '<strong>Accesibilidad:</strong> Modalidades escalonadas y facilidades de pago para nuevos negocios, marcas consolidadas y niños en INNTEGRA KIDS.'
+        };
+
+        function showValueDetail(key) {
+            document.getElementById('value-detail-text').innerHTML = brandValues[key];
+            document.querySelectorAll('.val-pill').forEach(btn => {
+                btn.className = 'val-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition';
+            });
+            const active = document.getElementById(`val-btn-${key}`);
+            if (active) {
+                active.className = 'val-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-inntegra-violet text-white shadow-sm transition';
+            }
+        }
+
+        const standPlansData = {
+            semilla: {
+                badge: 'Ideal para Nuevas Marcas Locales',
+                title: 'Stand Semilla Emprendedor (2x2m)',
+                basePrice: 220000,
+                selectOptionValue: 'Stand Semilla ($220.000 COP)',
+                features: [
+                    'Módulo 2x2m con mesa vestida y 2 sillas',
+                    'Cenefa impresa con el nombre de tu marca',
+                    'Punto eléctrico e iluminación LED',
+                    'Acceso completo a Escuela Pre-Feria'
+                ]
+            },
+            comercial: {
+                badge: 'El Más Elegido • Alto Flujo Central',
+                title: 'Stand Crecimiento Comercial (3x2m)',
+                basePrice: 350000,
+                selectOptionValue: 'Stand Comercial ($350.000 COP)',
+                features: [
+                    'Espacio amplio 3x2m sobre corredor principal',
+                    'Mobiliario doble + backing lateral de marca',
+                    'Mención destacada en catálogo digital oficial',
+                    'Acceso a Rueda de Negocios con compradores'
+                ]
+            },
+            vip: {
+                badge: 'Máxima Visibilidad • Doble Frente',
+                title: 'Stand Esquinero VIP (3x3m)',
+                basePrice: 520000,
+                selectOptionValue: 'Stand Esquinero VIP ($520.000 COP)',
+                features: [
+                    'Ubicación esquinera estratégica 3x3m frente a tarima',
+                    'Doble frente de exhibición y atención al público',
+                    'Entrevista oficial en vivo durante el evento',
+                    '2 pases prioritarios a Rueda de Inversión'
+                ]
+            },
+            kids: {
+                badge: 'Exclusivo Niños y Niñas de 6 a 14 años',
+                title: 'Stand Infantil INNTEGRA KIDS',
+                basePrice: 120000,
+                selectOptionValue: 'Stand INNTEGRA KIDS ($120.000 COP)',
+                features: [
+                    'Módulo adaptado en el Pabellón INNTEGRA KIDS',
+                    'Acompañamiento pedagógico y talleres lúdicos',
+                    'Kit creativo, escarapela y diploma oficial',
+                    'Fotografía oficial con la Mascota Cafetera'
+                ]
+            }
+        };
+
+        let currentStandPlanKey = 'semilla';
+
+        function formatCOP(value) {
+            return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' COP';
+        }
+
+        function selectStandPlan(planKey) {
+            currentStandPlanKey = planKey;
+            const plan = standPlansData[planKey];
+
+            document.getElementById('plan-badge').textContent = plan.badge;
+            document.getElementById('plan-title').textContent = plan.title;
+
+            const featuresEl = document.getElementById('plan-features');
+            featuresEl.innerHTML = plan.features.map(f => `
+                <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-inntegra-yellow"></i> ${f}</li>
+            `).join('');
+
+            document.querySelectorAll('.plan-selector-btn').forEach(btn => {
+                btn.className = 'plan-selector-btn py-2.5 px-2.5 rounded-xl text-xs font-bold bg-white/10 text-white hover:bg-white/20 transition text-center';
+            });
+            document.getElementById(`plan-btn-${planKey}`).className = 'plan-selector-btn py-2.5 px-2.5 rounded-xl text-xs font-bold bg-inntegra-yellow text-inntegra-violetDeep shadow transition text-center';
+
+            recalculatePlanTotal();
+        }
+
+        function recalculatePlanTotal() {
+            const plan = standPlansData[currentStandPlanKey];
+            let total = plan.basePrice;
+            if (document.getElementById('addon-tarima').checked) total += 45000;
+            if (document.getElementById('addon-redes').checked) total += 60000;
+
+            const half = Math.round(total / 2);
+            document.getElementById('plan-price').textContent = formatCOP(total);
+            document.getElementById('plan-installment').textContent = `Separa hoy tu cupo con el 50% (${formatCOP(half)}) y paga el saldo antes del evento.`;
+        }
+
+        function openRegistrationWithPlan() {
+            const plan = standPlansData[currentStandPlanKey];
+            const cat = currentStandPlanKey === 'kids' ? 'kids' : 'general';
+            openRegistrationModal(cat);
+            document.getElementById('input-plan').value = plan.selectOptionValue;
+            updateModalRateDisplay();
+        }
+
+        /* ----------------------------------------------------------
+           4. MAPA INTERACTIVO DE PABELLONES Y STANDS CON TARIFAS
+           ---------------------------------------------------------- */
+        const boothsData = [
+            { id: 'A-01', category: 'agro', status: 'occupied', planName: 'Stand Comercial (3x2m)', rate: '$350.000 COP', name: 'Café Origen Tatamá', city: 'El Águila / Cartago', owner: 'Familia Castaño', desc: 'Café especial de altura tostado artesanalmente por caficultores jóvenes del Norte del Valle.', tag: '☕ Agroindustria' },
+            { id: 'A-02', category: 'agro', status: 'available', planName: 'Stand Comercial (3x2m)', rate: '$350.000 COP', name: 'Stand Disponible • Zona Café', city: 'Corredor Principal', owner: '¡Reserva abierta!', desc: 'Espacio de alto tráfico ideal para cafés especiales, derivados del campo, cacao o transformación agroindustrial.', tag: '☕ Disponible' },
+            { id: 'A-03', category: 'agro', status: 'occupied', planName: 'Stand Semilla (2x2m)', rate: '$220.000 COP', name: 'Apiario Sol del Cauca', city: 'Ansermanuevo', owner: 'Carlos Andrés Ríos', desc: 'Miel pura multifloral, polen y propóleo producidos de forma sostenible.', tag: '🍯 Agroindustria' },
+            { id: 'M-04', category: 'moda', status: 'occupied', planName: 'Stand Esquinero VIP', rate: '$520.000 COP', name: 'Hilos de Sol Bordados', city: 'Cartago', owner: 'Asociación Artesanas', desc: 'Prendas contemporáneas que preservan la tradición del bordado cartagüeño.', tag: '🧵 Moda & Bordado' },
+            { id: 'M-05', category: 'moda', status: 'available', planName: 'Stand Semilla (2x2m)', rate: '$220.000 COP', name: 'Stand Disponible • Moda', city: 'Pabellón Diseño', owner: '¡Reserva abierta!', desc: 'Módulo acondicionado con iluminación cálida para marroquinería, calzado, joyería o confección local.', tag: '👗 Disponible' },
+            { id: 'G-06', category: 'gastro', status: 'occupied', planName: 'Stand Comercial (3x2m)', rate: '$350.000 COP', name: 'Dulces & Manjares del Río', city: 'La Unión / Cartago', owner: 'Doña Clara & Hijos', desc: 'Dulcería típica vallecaucana y repostería artesanal a base de frutas de la región.', tag: '🍲 Gastronomía' },
+            { id: 'G-07', category: 'gastro', status: 'occupied', planName: 'Stand Semilla (2x2m)', rate: '$220.000 COP', name: 'Chontaduro Lab Snacks', city: 'Zarzal / Cartago', owner: 'Mateo Restrepo', desc: 'Snacks deshidratados, salsas y harinas saludables a base de chontaduro.', tag: '🥑 Gastronomía' },
+            { id: 'G-08', category: 'gastro', status: 'available', planName: 'Stand Esquinero VIP (3x3m)', rate: '$520.000 COP', name: 'Stand Esquinero VIP Libre', city: 'Frente a Tarima Central', owner: '¡Ubicación Premium!', desc: 'Doble frente comercial frente a la tarima principal, ideal para gastronomía, bebidas o marca ancla.', tag: '👑 VIP Disponible' },
+            { id: 'K-09', category: 'kids', status: 'kids', planName: 'Stand INNTEGRA KIDS', rate: '$120.000 COP', name: 'Eco-Bloques por Sofía (10 años)', city: 'Cartago', owner: 'Sofía & Papás', desc: 'Juguetes didácticos y materas pintadas a mano reutilizando envases plásticos.', tag: '☕ INNTEGRA KIDS' },
+            { id: 'K-10', category: 'kids', status: 'kids', planName: 'Stand INNTEGRA KIDS', rate: '$120.000 COP', name: 'Galletas Galácticas (12 años)', city: 'Obando', owner: 'Samuel Morales', desc: 'Mini emprendimiento de galletas decoradas con mensajes positivos para niños.', tag: '☕ INNTEGRA KIDS' },
+            { id: 'K-11', category: 'kids', status: 'available-kids', planName: 'Stand INNTEGRA KIDS', rate: '$120.000 COP', name: 'Stand Infantil Disponible', city: 'Niños 6 a 14 años', owner: '¡Inscribe a tu hijo/a!', desc: 'Módulo infantil con mobiliario, acompañamiento pedagógico y kit oficial con nuestra mascota.', tag: '🎈 Cupo KIDS' },
+            { id: 'M-12', category: 'moda', status: 'occupied', planName: 'Stand Semilla (2x2m)', rate: '$220.000 COP', name: 'EcoFibra Bambú & Hogar', city: 'Alcalá', owner: 'Luisa Fernanda Mejía', desc: 'Accesorios y artículos decorativos tejidos en fibras naturales del paisaje cultural cafetero.', tag: '🎋 Artesanía' }
+        ];
+
+        let currentFilter = 'all';
+        let selectedBoothId = 'A-01';
+
+        function renderBoothsGrid() {
+            const grid = document.getElementById('booths-grid');
+            const filtered = currentFilter === 'all' 
+                ? boothsData 
+                : boothsData.filter(b => b.category === currentFilter);
+
+            grid.innerHTML = filtered.map(booth => {
+                const isSelected = booth.id === selectedBoothId;
+                let cardStyle = '';
+                let badgeHtml = '';
+
+                if (booth.status === 'occupied') {
+                    cardStyle = isSelected 
+                        ? 'bg-inntegra-violet text-white ring-4 ring-inntegra-yellow shadow-lg' 
+                        : 'bg-inntegra-violet/90 hover:bg-inntegra-violet text-white';
+                    badgeHtml = `<span class="px-2 py-0.5 rounded-md bg-white/15 text-[10px] font-bold">Reservado</span>`;
+                } else if (booth.status === 'kids') {
+                    cardStyle = isSelected
+                        ? 'bg-inntegra-yellow text-inntegra-violetDeep ring-4 ring-inntegra-orange shadow-lg'
+                        : 'bg-inntegra-yellow/90 hover:bg-inntegra-yellow text-inntegra-violetDeep';
+                    badgeHtml = `<span class="px-2 py-0.5 rounded-md bg-inntegra-violet text-white text-[10px] font-kids font-bold">KIDS</span>`;
+                } else {
+                    cardStyle = isSelected
+                        ? 'bg-emerald-600 text-white ring-4 ring-inntegra-yellow shadow-lg'
+                        : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-950 border-2 border-dashed border-emerald-500';
+                    badgeHtml = `<span class="px-2 py-0.5 rounded-md bg-emerald-600 text-white text-[10px] font-extrabold">${booth.rate.replace(' COP', '')}</span>`;
+                }
+
+                return `
+                    <button onclick="selectBooth('${booth.id}')" class="p-3.5 rounded-2xl text-left transition-all transform hover:-translate-y-0.5 flex flex-col justify-between min-h-[112px] ${cardStyle}">
+                        <div class="flex items-center justify-between w-full">
+                            <span class="font-museo font-extrabold text-sm">${booth.id}</span>
+                            ${badgeHtml}
+                        </div>
+                        <div class="mt-2">
+                            <div class="font-bold text-xs sm:text-sm line-clamp-1">${booth.name}</div>
+                            <div class="text-[11px] opacity-80 mt-0.5">${booth.tag}</div>
+                        </div>
+                    </button>
+                `;
+            }).join('');
+
+            renderBoothInspector();
+        }
+
+        function selectBooth(id) {
+            selectedBoothId = id;
+            renderBoothsGrid();
+        }
+
+        function filterBooths(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.booth-filter-btn').forEach(btn => {
+                btn.className = 'booth-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-inntegra-violetDeep border border-slate-200 hover:border-inntegra-violet transition';
+            });
+            const active = document.getElementById(`filter-${cat}`);
+            if (active) {
+                active.className = 'booth-filter-btn px-4 py-2 rounded-xl text-xs font-extrabold bg-inntegra-violet text-white shadow-sm transition';
+            }
+            const firstMatch = (cat === 'all' ? boothsData : boothsData.filter(b => b.category === cat))[0];
+            if (firstMatch) selectedBoothId = firstMatch.id;
+            renderBoothsGrid();
+        }
+
+        function renderBoothInspector() {
+            const booth = boothsData.find(b => b.id === selectedBoothId) || boothsData[0];
+            const container = document.getElementById('booth-inspector-content');
+            const isAvailable = booth.status.includes('available');
+
+            container.innerHTML = `
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-3 py-1 rounded-full text-xs font-extrabold ${isAvailable ? 'bg-emerald-400 text-emerald-950' : 'bg-inntegra-yellow text-inntegra-violetDeep'}">
+                        Stand ${booth.id} • ${isAvailable ? 'Disponible para Reserva' : 'Marca Confirmada'}
+                    </span>
+                    <span class="text-xs text-white/70">${booth.tag}</span>
+                </div>
+
+                <h3 class="font-museo text-2xl font-extrabold text-white leading-snug">
+                    ${booth.name}
+                </h3>
+
+                <div class="flex items-center gap-2 text-xs text-inntegra-yellow font-semibold mt-1">
+                    <i class="ph-fill ph-map-pin"></i> ${booth.city} • ${booth.owner}
+                </div>
+
+                <p class="mt-4 text-sm text-white/90 bg-white/10 p-4 rounded-2xl border border-white/15 leading-relaxed">
+                    ${booth.desc}
+                </p>
+
+                <div class="mt-5 space-y-2.5 text-xs text-white/85">
+                    <div class="flex items-center justify-between py-2 border-b border-white/10">
+                        <span>Categoría del Módulo:</span>
+                        <span class="font-bold text-white">${booth.planName}</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2 border-b border-white/10">
+                        <span>Valor de Inversión:</span>
+                        <span class="font-museo font-bold text-inntegra-yellow text-sm">${booth.rate}</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2 border-b border-white/10">
+                        <span>Incluye mobiliario, cenefa y Escuela:</span>
+                        <span class="font-bold text-emerald-300">Sí, incluido</span>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    ${isAvailable ? `
+                        <button onclick="openRegistrationWithBooth('${booth.id}', '${booth.status === 'available-kids' ? 'kids' : 'general'}', '${booth.rate}')" class="w-full py-3.5 px-4 rounded-2xl bg-inntegra-orange hover:bg-inntegra-yellow text-white hover:text-inntegra-violetDeep font-extrabold text-sm shadow-orange-glow transition flex items-center justify-center gap-2">
+                            <span>Reservar el Stand ${booth.id} (${booth.rate.replace(' COP', '')})</span>
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </button>
+                    ` : `
+                        <button onclick="openRegistrationModal('${booth.status === 'kids' ? 'kids' : 'general'}')" class="w-full py-3.5 px-4 rounded-2xl bg-white/15 hover:bg-inntegra-yellow text-white hover:text-inntegra-violetDeep font-bold text-sm border border-white/25 transition flex items-center justify-center gap-2">
+                            <span>Cotizar un Stand Similar</span>
+                            <i class="ph-bold ph-sparkle"></i>
+                        </button>
+                    `}
+                </div>
+            `;
+        }
+
+        /* ----------------------------------------------------------
+           5. NUEVA MASCOTA OFICIAL: JARRITA CAFETERA RUBBER-HOSE (4 POSES DEL VIDEO)
+           Recreación vectorial fiel al video subido (00:00, 00:01, 00:02, 00:03):
+           - Jarrita/pocillo acampanado dividido verticalmente: izquierda BLANCO (#FFFFFF), derecha VIOLETA (#5E17EB)
+           - Asa derecha blanca con contorno grueso violeta
+           - Café oscuro (#5C2C16) salpicando dinámicamente arriba
+           - Ojos clásicos estilo "pie-eye" con muesca, sonrisa alegre, guantes blancos y zapatillas bicolor
+           ---------------------------------------------------------- */
+        const mascotPoses = {
+            caminando: {
+                frameLabel: 'Fotograma 01 (00:00) • Caminando con Paso Firme',
+                speech: '"¡Con toda la energía del café del Norte del Valle! ¡Vamos camino a tu stand en INNTEGRA!"',
+                svg: `
+                <svg viewBox="0 0 260 250" class="w-56 h-56 sm:w-64 sm:h-64 overflow-visible">
+                    <!-- Sombra en el suelo -->
+                    <ellipse cx="135" cy="232" rx="64" ry="8" fill="#5E17EB" opacity="0.22"/>
+
+                    <!-- Salpicadura dinámica de café (hacia atrás/arriba al caminar como en 00:00) -->
+                    <g class="splash-drop">
+                        <path d="M 92 52 C 74 28, 62 18, 72 12 C 80 8, 92 24, 102 44 C 98 24, 102 10, 112 12 C 120 14, 116 32, 118 46 Z" fill="#5C2C16"/>
+                        <circle cx="58" cy="22" r="5" fill="#5C2C16"/>
+                        <circle cx="85" cy="8" r="4" fill="#5C2C16"/>
+                        <ellipse cx="142" cy="24" rx="6" ry="3.5" transform="rotate(-25 142 24)" fill="#5C2C16"/>
+                    </g>
+
+                    <!-- Brazo izquierdo extendido al frente con puño enguantado (00:00) -->
+                    <path d="M 88 122 C 64 124, 52 114, 42 104" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                    <path d="M 88 122 C 64 124, 52 114, 42 104" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                    <!-- Guante izquierdo -->
+                    <g transform="translate(20, 84)">
+                        <rect x="4" y="6" width="24" height="22" rx="10" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                        <path d="M 18 10 C 26 10, 26 20, 18 20" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                        <line x1="11" y1="12" x2="11" y2="21" stroke="#5E17EB" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="16" y1="12" x2="16" y2="21" stroke="#5E17EB" stroke-width="2.5" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- Pierna delantera (izquierda dando el paso) -->
+                    <path d="M 110 172 C 98 188, 92 200, 82 212" fill="none" stroke="#5E17EB" stroke-width="16" stroke-linecap="round"/>
+                    <path d="M 110 172 C 98 188, 92 200, 82 212" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+                    <!-- Zapato delantero bicolor levantado en talón -->
+                    <g transform="translate(42, 198) rotate(-14 30 15)">
+                        <path d="M 8 18 C 8 4, 34 4, 44 14 L 52 14 L 52 26 L 6 26 Z" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5" stroke-linejoin="round"/>
+                        <path d="M 24 8 C 34 8, 42 14, 44 22 L 24 22 Z" fill="#5E17EB"/>
+                        <rect x="4" y="22" width="50" height="6" rx="3" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    </g>
+
+                    <!-- Pierna trasera (derecha impulsando) -->
+                    <path d="M 148 172 C 158 190, 168 202, 180 212" fill="none" stroke="#5E17EB" stroke-width="16" stroke-linecap="round"/>
+                    <path d="M 148 172 C 158 190, 168 202, 180 212" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+                    <!-- Zapato trasero -->
+                    <g transform="translate(152, 204)">
+                        <path d="M 6 18 C 6 5, 32 5, 44 15 L 50 24 L 6 24 Z" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5" stroke-linejoin="round"/>
+                        <path d="M 22 9 C 32 9, 40 14, 42 21 L 22 21 Z" fill="#5E17EB"/>
+                        <rect x="4" y="21" width="48" height="6" rx="3" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    </g>
+
+                    <!-- Asa derecha de la jarrita -->
+                    <path d="M 176 78 C 210 78, 212 142, 174 142" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                    <path d="M 176 78 C 204 78, 206 142, 174 142" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+
+                    <!-- CUERPO DE LA JARRITA DIVIDIDO: Mitad Izquierda BLANCA / Mitad Derecha VIOLETA (#5E17EB) -->
+                    <!-- Mitad Izquierda Blanca -->
+                    <path d="M 76 54 L 130 54 L 130 176 L 96 176 C 72 156, 70 124, 86 92 C 90 78, 84 64, 76 54 Z" fill="#FFFFFF"/>
+                    <!-- Mitad Derecha Violeta -->
+                    <path d="M 130 54 L 184 54 C 176 64, 172 78, 176 92 C 190 124, 188 156, 164 176 L 130 176 Z" fill="#5E17EB"/>
+                    <!-- Línea horizontal media de la jarrita (como en el video) -->
+                    <path d="M 77 124 Q 130 130 183 124" fill="none" stroke="#5E17EB" stroke-width="3.5"/>
+                    <path d="M 130 126 Q 158 126 183 123" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+                    <!-- Contorno exterior grueso de la jarrita -->
+                    <path d="M 76 54 L 184 54 C 176 64, 172 78, 176 92 C 190 124, 188 156, 164 176 L 96 176 C 72 156, 70 124, 86 92 C 90 78, 84 64, 76 54 Z" 
+                          fill="none" stroke="#5E17EB" stroke-width="4.5" stroke-linejoin="round"/>
+
+                    <!-- Borde superior elíptico y café adentro -->
+                    <ellipse cx="130" cy="54" rx="54" ry="11" fill="#FFFFFF" stroke="#5E17EB" stroke-width="4"/>
+                    <ellipse cx="130" cy="54" rx="44" ry="7" fill="#5C2C16"/>
+                    <path d="M 96 53 Q 130 48 164 53" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.6"/>
+
+                    <!-- ROSTRO ESTILO CARICATURA CLÁSICA RUBBER-HOSE -->
+                    <!-- Cejas -->
+                    <path d="M 98 76 Q 106 70 114 75" fill="none" stroke="#5E17EB" stroke-width="3.2" stroke-linecap="round"/>
+                    <path d="M 132 75 Q 140 70 148 76" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
+                    <!-- Ojo izquierdo (sobre fondo blanco) -->
+                    <ellipse cx="107" cy="94" rx="9" ry="14" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    <ellipse cx="105" cy="95" rx="5.5" ry="9" fill="#5E17EB"/>
+                    <polygon points="100,91 107,94 101,97" fill="#FFFFFF"/>
+                    <!-- Ojo derecho (con borde blanco sobre la mitad violeta) -->
+                    <ellipse cx="134" cy="94" rx="9" ry="14" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    <ellipse cx="132" cy="95" rx="5.5" ry="9" fill="#5E17EB"/>
+                    <polygon points="127,91 134,94 128,97" fill="#FFFFFF"/>
+                    <!-- Nariz pequeña respingada -->
+                    <path d="M 114 108 C 108 108, 108 115, 116 115" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3" stroke-linecap="round"/>
+                    <!-- Gran sonrisa alegre con dientes y lengua -->
+                    <path d="M 100 120 Q 124 148 148 118 Z" fill="#5E17EB" stroke="#FFFFFF" stroke-width="2"/>
+                    <path d="M 100 120 Q 124 148 148 118 Z" fill="none" stroke="#5E17EB" stroke-width="3"/>
+                    <path d="M 106 121 L 141 120 L 139 128 L 108 128 Z" fill="#FFFFFF"/>
+                    <path d="M 114 135 Q 124 129 134 135 Q 124 143 114 135 Z" fill="#FFFFFF"/>
+
+                    <!-- Brazo derecho balanceándose atrás -->
+                    <path d="M 176 128 C 194 136, 204 146, 212 156" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                    <path d="M 176 128 C 194 136, 204 146, 212 156" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="216" cy="160" r="11" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                </svg>`
+            },
+            firme: {
+                frameLabel: 'Fotograma 02 (00:01) • Posando Firme y Sonriente',
+                speech: '"¡Aquí estoy firme! En INNTEGRA tu marca tiene imagen profesional, clientes reales y respaldo total."',
+                svg: `
+                <svg viewBox="0 0 260 250" class="w-56 h-56 sm:w-64 sm:h-64 overflow-visible">
+                    <ellipse cx="130" cy="232" rx="68" ry="8" fill="#5E17EB" opacity="0.22"/>
+
+                    <!-- Salpicadura de café simétrica hacia arriba (como en 00:01) -->
+                    <g class="splash-drop">
+                        <path d="M 88 50 C 78 34, 70 28, 76 22 C 82 18, 92 32, 98 46 Z" fill="#5C2C16"/>
+                        <circle cx="66" cy="30" r="4.5" fill="#5C2C16"/>
+                        <circle cx="88" cy="20" r="3.5" fill="#5C2C16"/>
+                        <circle cx="176" cy="24" r="4.5" fill="#5C2C16"/>
+                    </g>
+
+                    <!-- Piernas firmes ligeramente flexionadas (00:01) -->
+                    <path d="M 106 172 C 98 188, 98 202, 102 214" fill="none" stroke="#5E17EB" stroke-width="16" stroke-linecap="round"/>
+                    <path d="M 106 172 C 98 188, 98 202, 102 214" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+                    <path d="M 148 172 C 144 188, 144 202, 148 214" fill="none" stroke="#5E17EB" stroke-width="16" stroke-linecap="round"/>
+                    <path d="M 148 172 C 144 188, 144 202, 148 214" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+
+                    <!-- Zapatos plantados en el suelo -->
+                    <g transform="translate(56, 206)">
+                        <path d="M 6 18 C 6 4, 34 4, 48 14 L 52 24 L 6 24 Z" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                        <path d="M 22 8 C 34 8, 42 13, 45 21 L 22 21 Z" fill="#5E17EB"/>
+                        <rect x="4" y="21" width="50" height="6" rx="3" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    </g>
+                    <g transform="translate(132, 206)">
+                        <path d="M 6 18 C 6 4, 34 4, 48 14 L 52 24 L 6 24 Z" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                        <path d="M 22 8 C 34 8, 42 13, 45 21 L 22 21 Z" fill="#5E17EB"/>
+                        <rect x="4" y="21" width="50" height="6" rx="3" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    </g>
+
+                    <!-- Brazos curvos a los lados listos para la acción (00:01) -->
+                    <path d="M 80 130 C 56 138, 52 156, 62 170" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                    <path d="M 80 130 C 56 138, 52 156, 62 170" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="64" cy="174" r="12" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+
+                    <path d="M 176 132 C 198 140, 202 158, 192 172" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                    <path d="M 176 132 C 198 140, 202 158, 192 172" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="190" cy="176" r="12" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+
+                    <!-- Asa derecha -->
+                    <path d="M 176 78 C 210 78, 212 142, 174 142" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                    <path d="M 176 78 C 204 78, 206 142, 174 142" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+
+                    <!-- Cuerpo Bicolor Blanco / Violeta -->
+                    <path d="M 76 54 L 130 54 L 130 176 L 96 176 C 72 156, 70 124, 86 92 C 90 78, 84 64, 76 54 Z" fill="#FFFFFF"/>
+                    <path d="M 130 54 L 184 54 C 176 64, 172 78, 176 92 C 190 124, 188 156, 164 176 L 130 176 Z" fill="#5E17EB"/>
+                    <path d="M 77 124 Q 130 130 183 124" fill="none" stroke="#5E17EB" stroke-width="3.5"/>
+                    <path d="M 130 126 Q 158 126 183 123" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+                    <path d="M 76 54 L 184 54 C 176 64, 172 78, 176 92 C 190 124, 188 156, 164 176 L 96 176 C 72 156, 70 124, 86 92 C 90 78, 84 64, 76 54 Z" 
+                          fill="none" stroke="#5E17EB" stroke-width="4.5" stroke-linejoin="round"/>
+
+                    <!-- Borde superior con café -->
+                    <ellipse cx="130" cy="54" rx="54" ry="11" fill="#FFFFFF" stroke="#5E17EB" stroke-width="4"/>
+                    <ellipse cx="130" cy="54" rx="44" ry="7" fill="#5C2C16"/>
+
+                    <!-- Rostro sonriente -->
+                    <path d="M 96 75 Q 105 69 114 75" fill="none" stroke="#5E17EB" stroke-width="3.2" stroke-linecap="round"/>
+                    <path d="M 132 75 Q 141 69 150 75" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
+                    <ellipse cx="106" cy="94" rx="9" ry="14" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    <ellipse cx="105" cy="95" rx="5.5" ry="9" fill="#5E17EB"/>
+                    <polygon points="100,91 106,94 100,97" fill="#FFFFFF"/>
+                    <ellipse cx="134" cy="94" rx="9" ry="14" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    <ellipse cx="133" cy="95" rx="5.5" ry="9" fill="#5E17EB"/>
+                    <polygon points="128,91 134,94 128,97" fill="#FFFFFF"/>
+                    <path d="M 114 108 C 108 108, 108 115, 116 115" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M 98 119 Q 124 148 148 118 Z" fill="#5E17EB" stroke="#FFFFFF" stroke-width="2"/>
+                    <path d="M 105 120 L 141 119 L 139 127 L 107 127 Z" fill="#FFFFFF"/>
+                    <path d="M 114 134 Q 124 128 134 134 Q 124 142 114 134 Z" fill="#FFFFFF"/>
+                </svg>`
+            },
+            impulso: {
+                frameLabel: 'Fotograma 03 (00:02) • Tomando Impulso Emprendedor',
+                speech: '"¡Preparados, listos... tomando impulso para dar el gran salto de ventas en la feria!"',
+                svg: `
+                <svg viewBox="0 0 260 250" class="w-56 h-56 sm:w-64 sm:h-64 overflow-visible">
+                    <ellipse cx="130" cy="232" rx="76" ry="9" fill="#5E17EB" opacity="0.26"/>
+
+                    <!-- Piernas bien flexionadas hacia afuera agachándose (como en 00:02) -->
+                    <path d="M 104 184 C 82 192, 82 206, 98 216" fill="none" stroke="#5E17EB" stroke-width="16" stroke-linecap="round"/>
+                    <path d="M 104 184 C 82 192, 82 206, 98 216" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+                    <path d="M 156 184 C 178 192, 178 206, 162 216" fill="none" stroke="#5E17EB" stroke-width="16" stroke-linecap="round"/>
+                    <path d="M 156 184 C 178 192, 178 206, 162 216" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+
+                    <!-- Zapatos firmes cargando energía -->
+                    <g transform="translate(56, 206)">
+                        <path d="M 6 18 C 6 4, 34 4, 48 14 L 52 24 L 6 24 Z" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                        <path d="M 22 8 C 34 8, 42 13, 45 21 L 22 21 Z" fill="#5E17EB"/>
+                        <rect x="4" y="21" width="50" height="6" rx="3" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    </g>
+                    <g transform="translate(136, 206)">
+                        <path d="M 6 18 C 6 4, 34 4, 48 14 L 52 24 L 6 24 Z" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                        <path d="M 22 8 C 34 8, 42 13, 45 21 L 22 21 Z" fill="#5E17EB"/>
+                        <rect x="4" y="21" width="50" height="6" rx="3" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                    </g>
+
+                    <!-- Brazos abiertos arqueados tomando impulso (00:02) -->
+                    <path d="M 76 142 C 44 146, 38 168, 46 184" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                    <path d="M 76 142 C 44 146, 38 168, 46 184" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="48" cy="188" r="12" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+
+                    <path d="M 184 142 C 214 146, 220 168, 212 184" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                    <path d="M 184 142 C 214 146, 220 168, 212 184" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="210" cy="188" r="12" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+
+                    <!-- Cuerpo comprimido (squash & stretch de animación clásica en 00:02) -->
+                    <g transform="translate(0, 22) scale(1, 0.88)">
+                        <path d="M 178 78 C 212 78, 214 142, 176 142" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                        <path d="M 178 78 C 206 78, 208 142, 176 142" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+
+                        <path d="M 72 58 L 130 52 L 130 180 L 92 180 C 66 160, 64 126, 82 94 Z" fill="#FFFFFF"/>
+                        <path d="M 130 52 L 188 58 L 178 94 C 196 126, 194 160, 168 180 L 130 180 Z" fill="#5E17EB"/>
+                        <path d="M 73 130 Q 130 136 187 130" fill="none" stroke="#5E17EB" stroke-width="3.5"/>
+                        <path d="M 130 132 Q 158 132 187 129" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+                        <path d="M 72 58 L 188 58 L 178 94 C 196 126, 194 160, 168 180 L 92 180 C 66 160, 64 126, 82 94 Z" 
+                              fill="none" stroke="#5E17EB" stroke-width="4.5" stroke-linejoin="round"/>
+
+                        <ellipse cx="130" cy="56" rx="58" ry="11" fill="#FFFFFF" stroke="#5E17EB" stroke-width="4"/>
+                        <ellipse cx="130" cy="56" rx="46" ry="7" fill="#5C2C16"/>
+                        <!-- Salpicadura hacia la derecha al comprimir -->
+                        <path d="M 152 52 C 166 40, 180 38, 176 48 Z" fill="#5C2C16"/>
+
+                        <!-- Ojos cerrados con fuerza (> <) tomando impulso como en el segundo 00:02 del video -->
+                        <path d="M 94 94 L 112 104 L 94 112" fill="none" stroke="#5E17EB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 148 94 L 130 104 L 148 112" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 114 114 C 108 114, 108 121, 116 121" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3" stroke-linecap="round"/>
+                        <!-- Sonrisa pícara apretada -->
+                        <path d="M 102 132 Q 124 146 144 130" fill="none" stroke="#5E17EB" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M 128 136 Q 138 135 144 130" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+                    </g>
+                </svg>`
+            },
+            salto: {
+                frameLabel: 'Fotograma 04 (00:03) • ¡Gran Salto de Éxito INNTEGRA!',
+                speech: '"¡SÍÍÍ! ¡Con INNTEGRA e INNTEGRA KIDS damos el gran salto! ¡Ya estás adentro!"',
+                svg: `
+                <svg viewBox="0 0 260 250" class="w-56 h-56 sm:w-64 sm:h-64 overflow-visible">
+                    <!-- Sombra pequeñita abajo porque está alto en el aire (igual al segundo 00:03 del video) -->
+                    <ellipse cx="130" cy="238" rx="26" ry="4.5" fill="#5E17EB" opacity="0.35"/>
+
+                    <!-- Líneas de velocidad / impulso arriba -->
+                    <line x1="102" y1="8" x2="102" y2="18" stroke="#5E17EB" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="122" y1="4" x2="122" y2="16" stroke="#5E17EB" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="142" y1="8" x2="142" y2="18" stroke="#5E17EB" stroke-width="2.5" stroke-linecap="round"/>
+
+                    <g transform="translate(0, -18)">
+                        <!-- Gran salpicadura de café celebrando (00:03) -->
+                        <g class="splash-drop">
+                            <path d="M 134 52 C 144 26, 162 18, 168 24 C 172 30, 156 42, 148 52 C 162 38, 178 36, 180 44 C 182 50, 162 54, 146 56 Z" fill="#5C2C16"/>
+                            <circle cx="154" cy="18" r="4.5" fill="#5C2C16"/>
+                            <circle cx="178" cy="28" r="3.8" fill="#5C2C16"/>
+                            <circle cx="96" cy="26" r="4" fill="#5C2C16"/>
+                        </g>
+
+                        <!-- Ambos brazos levantados en victoria (00:03) -->
+                        <path d="M 82 104 C 56 96, 46 78, 52 60" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                        <path d="M 82 104 C 56 96, 46 78, 52 60" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                        <circle cx="52" cy="56" r="12" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+
+                        <path d="M 178 104 C 204 96, 214 78, 208 60" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                        <path d="M 178 104 C 204 96, 214 78, 208 60" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                        <circle cx="208" cy="56" r="12" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+
+                        <!-- Piernas abiertas en el aire saltando de alegría (00:03) -->
+                        <path d="M 104 156 C 84 166, 78 182, 84 196" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                        <path d="M 104 156 C 84 166, 78 182, 84 196" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                        <g transform="translate(48, 184) rotate(-28 25 15)">
+                            <path d="M 6 18 C 6 4, 34 4, 46 14 L 50 24 L 6 24 Z" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                            <path d="M 22 8 C 34 8, 40 13, 43 21 L 22 21 Z" fill="#5E17EB"/>
+                            <rect x="4" y="21" width="48" height="6" rx="3" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                        </g>
+
+                        <path d="M 154 156 C 174 166, 180 182, 174 196" fill="none" stroke="#5E17EB" stroke-width="15" stroke-linecap="round"/>
+                        <path d="M 154 156 C 174 166, 180 182, 174 196" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                        <g transform="translate(154, 186) rotate(26 25 15)">
+                            <path d="M 6 18 C 6 4, 34 4, 46 14 L 50 24 L 6 24 Z" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                            <path d="M 22 8 C 34 8, 40 13, 43 21 L 22 21 Z" fill="#5E17EB"/>
+                            <rect x="4" y="21" width="48" height="6" rx="3" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                        </g>
+
+                        <!-- Asa derecha -->
+                        <path d="M 174 72 C 204 72, 206 132, 172 132" fill="none" stroke="#5E17EB" stroke-width="14" stroke-linecap="round"/>
+                        <path d="M 174 72 C 198 72, 200 132, 172 132" fill="none" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round"/>
+
+                        <!-- Cuerpo de la Jarrita Bicolor en el aire -->
+                        <path d="M 80 50 L 130 50 L 130 162 L 98 162 C 76 144, 74 114, 88 84 Z" fill="#FFFFFF"/>
+                        <path d="M 130 50 L 180 50 L 172 84 C 186 114, 184 144, 162 162 L 130 162 Z" fill="#5E17EB"/>
+                        <path d="M 81 114 Q 130 120 179 114" fill="none" stroke="#5E17EB" stroke-width="3.5"/>
+                        <path d="M 130 116 Q 155 116 179 113" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+                        <path d="M 80 50 L 180 50 L 172 84 C 186 114, 184 144, 162 162 L 98 162 C 76 144, 74 114, 88 84 Z" 
+                              fill="none" stroke="#5E17EB" stroke-width="4.5" stroke-linejoin="round"/>
+
+                        <ellipse cx="130" cy="50" rx="50" ry="10" fill="#FFFFFF" stroke="#5E17EB" stroke-width="4"/>
+                        <ellipse cx="130" cy="50" rx="40" ry="6.5" fill="#5C2C16"/>
+
+                        <!-- Rostro eufórico saltando -->
+                        <ellipse cx="108" cy="88" rx="8.5" ry="13.5" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                        <ellipse cx="107" cy="89" rx="5" ry="8.5" fill="#5E17EB"/>
+                        <polygon points="102,85 108,88 102,91" fill="#FFFFFF"/>
+                        <ellipse cx="133" cy="88" rx="8.5" ry="13.5" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3"/>
+                        <ellipse cx="132" cy="89" rx="5" ry="8.5" fill="#5E17EB"/>
+                        <polygon points="127,85 133,88 127,91" fill="#FFFFFF"/>
+                        <path d="M 114 102 C 108 102, 108 109, 116 109" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M 100 114 Q 124 144 146 114 Z" fill="#5E17EB" stroke="#FFFFFF" stroke-width="2"/>
+                        <path d="M 107 115 L 139 115 L 137 122 L 109 122 Z" fill="#FFFFFF"/>
+                    </g>
+                </svg>`
+            }
+        };
+
+        const poseKeys = ['caminando', 'firme', 'impulso', 'salto'];
+        let currentPoseIndex = 0;
+        let mascotAutoPlayInterval = null;
+
+        function setMascotPose(poseKey, stopAuto = false) {
+            if (stopAuto && mascotAutoPlayInterval) {
+                stopMascotAutoPlay();
+            }
+            const pose = mascotPoses[poseKey] || mascotPoses.caminando;
+            document.getElementById('mascot-stage').innerHTML = pose.svg;
+            document.getElementById('mascot-speech-bubble').textContent = pose.speech;
+            document.getElementById('mascot-frame-badge').textContent = pose.frameLabel;
+            currentPoseIndex = poseKeys.indexOf(poseKey);
+
+            document.querySelectorAll('.mascot-pose-btn').forEach(btn => {
+                btn.className = 'mascot-pose-btn py-2 px-1.5 rounded-xl font-kids font-bold text-xs bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition';
+            });
+            const active = document.getElementById(`mascot-btn-${poseKey}`);
+            if (active) {
+                active.className = 'mascot-pose-btn py-2 px-1.5 rounded-xl font-kids font-bold text-xs bg-inntegra-violet text-white shadow transition';
+            }
+        }
+
+        function cycleMascotPose() {
+            currentPoseIndex = (currentPoseIndex + 1) % poseKeys.length;
+            setMascotPose(poseKeys[currentPoseIndex], false);
+        }
+
+        function toggleMascotAutoPlay() {
+            if (mascotAutoPlayInterval) {
+                stopMascotAutoPlay();
+            } else {
+                const btn = document.getElementById('mascot-autoplay-btn');
+                document.getElementById('autoplay-icon').className = 'ph-fill ph-pause';
+                document.getElementById('autoplay-text').textContent = 'Pausar Secuencia';
+                btn.classList.replace('bg-inntegra-orange', 'bg-emerald-600');
+                mascotAutoPlayInterval = setInterval(() => {
+                    cycleMascotPose();
+                }, 950);
+            }
+        }
+
+        function stopMascotAutoPlay() {
+            clearInterval(mascotAutoPlayInterval);
+            mascotAutoPlayInterval = null;
+            const btn = document.getElementById('mascot-autoplay-btn');
+            if (btn) {
+                document.getElementById('autoplay-icon').className = 'ph-fill ph-play';
+                document.getElementById('autoplay-text').textContent = 'Animar Video';
+                btn.classList.replace('bg-emerald-600', 'bg-inntegra-orange');
+            }
+        }
+
+        /* ----------------------------------------------------------
+           6. PERSONALIZADOR DE CAMISETAS Y MERCH OFICIAL (CON LA NUEVA MASCOTA)
+           ---------------------------------------------------------- */
+        let merchState = {
+            item: 'shirt',   // 'shirt' | 'mug' | 'tote'
+            color: 'violet', // 'violet' | 'yellow' | 'orange' | 'white'
+            brand: 'main'    // 'main' | 'kids' | 'mascot'
+        };
+
+        const colorMap = {
+            violet: { bg: '#5E17EB', stroke: '#3B0A99', logoText: '#FFFFFF', quoteL: '#FFD800', quoteR: '#FF8200', name: '#5E17EB (Violeta)' },
+            yellow: { bg: '#FFD800', stroke: '#EAB308', logoText: '#5E17EB', quoteL: '#FF8200', quoteR: '#5E17EB', name: '#FFD800 (Amarillo)' },
+            orange: { bg: '#FF8200', stroke: '#D97706', logoText: '#FFFFFF', quoteL: '#FFD800', quoteR: '#5E17EB', name: '#FF8200 (Naranja)' },
+            white:  { bg: '#FFFFFF', stroke: '#CBD5E1', logoText: '#5E17EB', quoteL: '#FFD800', quoteR: '#FF8200', name: 'Blanco Institucional' }
+        };
+
+        function setMerchItem(item) {
+            merchState.item = item;
+            document.querySelectorAll('.merch-item-btn').forEach(btn => {
+                btn.className = 'merch-item-btn py-3 px-3 rounded-2xl font-bold text-xs sm:text-sm bg-white text-inntegra-violetDeep border border-slate-200 hover:border-inntegra-violet transition flex flex-col items-center gap-1';
+            });
+            document.getElementById(`merch-item-${item}`).className = 'merch-item-btn py-3 px-3 rounded-2xl font-bold text-xs sm:text-sm bg-inntegra-violet text-white shadow transition flex flex-col items-center gap-1';
+            renderMerchPreview();
+        }
+
+        function setMerchColor(color) {
+            merchState.color = color;
+            renderMerchPreview();
+        }
+
+        function setMerchBrand(brand) {
+            merchState.brand = brand;
+            ['main', 'kids', 'mascot'].forEach(b => {
+                document.getElementById(`merch-brand-${b}`).className = b === brand
+                    ? 'py-2.5 px-2.5 rounded-xl font-bold text-xs bg-inntegra-violetDeep text-white transition'
+                    : 'py-2.5 px-2.5 rounded-xl font-bold text-xs bg-white text-inntegra-violetDeep border border-slate-200 transition';
+            });
+            renderMerchPreview();
+        }
+
+        function getBrandLogoSvgGroup(c, brandMode) {
+            const isKids = brandMode === 'kids';
+            const isMascot = brandMode === 'mascot';
+
+            return `
+                <g transform="translate(85, ${isMascot ? '138' : '115'}) scale(0.45)">
+                    ${isMascot ? `
+                        <!-- Mini Mascota Jarrita de Café encima del logo -->
+                        <g transform="translate(95, -135) scale(1.35)">
+                            <circle cx="50" cy="50" r="44" fill="#FFFFFF" opacity="0.92"/>
+                            <path d="M 72 36 C 88 36, 88 66, 70 66" fill="none" stroke="#5E17EB" stroke-width="6.5" stroke-linecap="round"/>
+                            <path d="M 24 26 L 50 26 L 50 80 L 30 80 C 18 68, 20 50, 26 38 Z" fill="#FFFFFF"/>
+                            <path d="M 50 26 L 76 26 L 74 38 C 80 50, 82 68, 70 80 L 50 80 Z" fill="#5E17EB"/>
+                            <path d="M 24 26 L 76 26 L 74 38 C 80 50, 82 68, 70 80 L 30 80 C 18 68, 20 50, 26 38 Z" fill="none" stroke="#5E17EB" stroke-width="4" stroke-linejoin="round"/>
+                            <ellipse cx="50" cy="26" rx="26" ry="5.5" fill="#FFFFFF" stroke="#5E17EB" stroke-width="3.5"/>
+                            <ellipse cx="50" cy="26" rx="20" ry="3.5" fill="#5C2C16"/>
+                            <ellipse cx="40" cy="46" rx="5" ry="7.5" fill="#FFFFFF" stroke="#5E17EB" stroke-width="2.5"/>
+                            <ellipse cx="40" cy="47" rx="3" ry="4.5" fill="#5E17EB"/>
+                            <ellipse cx="56" cy="46" rx="5" ry="7.5" fill="#FFFFFF" stroke="#5E17EB" stroke-width="2.5"/>
+                            <ellipse cx="55" cy="47" rx="3" ry="4.5" fill="#5E17EB"/>
+                            <path d="M 36 58 Q 48 70 60 58 Z" fill="#5E17EB"/>
+                        </g>
+                    ` : ''}
+                    ${isKids ? `
+                        <rect x="185" y="-28" width="82" height="34" rx="17" fill="#FFD800" stroke="#FF8200" stroke-width="3"/>
+                        <text x="226" y="-5" text-anchor="middle" fill="#5E17EB" font-family="'Fredoka', cursive" font-weight="700" font-size="22">KIDS</text>
+                    ` : ''}
+                    <path d="M 10 34 L 10 18 L 26 18" stroke="${c.quoteL}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 22 28 L 22 48 C 22 58 35 58 35 48 L 35 34 C 35 25 48 25 48 34 L 48 48 C 48 58 61 58 61 48 L 61 34 C 61 25 74 25 74 34 L 74 54" 
+                          stroke="${c.logoText}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <text x="82" y="55" fill="${c.logoText}" font-family="'MuseoModerno', sans-serif" font-weight="800" font-size="44" letter-spacing="-1">TEGRA</text>
+                    <path d="M 278 18 L 294 18 L 294 34" stroke="${c.quoteR}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+            `;
+        }
+
+        function renderMerchPreview() {
+            const c = colorMap[merchState.color];
+            const canvas = document.getElementById('merch-preview-canvas');
+            const itemNames = { shirt: 'Camiseta Oficial', mug: 'Mug Emprendedor', tote: 'Tote Bag Feria' };
+            document.getElementById('merch-badge-label').textContent = `${itemNames[merchState.item]} • ${c.name}`;
+
+            if (merchState.item === 'shirt') {
+                canvas.innerHTML = `
+                    <svg viewBox="0 0 300 300" class="w-72 h-72 drop-shadow-xl">
+                        <!-- Silueta de Camiseta (Pág. 13 del Manual) -->
+                        <path d="M 85 35 L 30 70 L 52 115 L 80 98 L 80 265 L 220 265 L 220 98 L 248 115 L 270 70 L 215 35 C 195 55, 105 55, 85 35 Z" 
+                              fill="${c.bg}" stroke="${c.stroke}" stroke-width="3" stroke-linejoin="round"/>
+                        <!-- Cuello -->
+                        <path d="M 110 38 C 130 58, 170 58, 190 38" fill="none" stroke="${c.stroke}" stroke-width="3"/>
+                        ${getBrandLogoSvgGroup(c, merchState.brand)}
+                    </svg>
+                `;
+            } else if (merchState.item === 'mug') {
+                canvas.innerHTML = `
+                    <svg viewBox="0 0 300 280" class="w-72 h-72 drop-shadow-xl">
+                        <!-- Asa del Mug (Pág. 24 del Manual) -->
+                        <path d="M 205 85 C 255 85, 255 195, 205 195" fill="none" stroke="${c.bg}" stroke-width="20" stroke-linecap="round"/>
+                        <path d="M 205 85 C 255 85, 255 195, 205 195" fill="none" stroke="${c.stroke}" stroke-width="2"/>
+                        <!-- Cuerpo del Mug -->
+                        <rect x="65" y="55" width="150" height="175" rx="22" fill="${c.bg}" stroke="${c.stroke}" stroke-width="3"/>
+                        <ellipse cx="140" cy="58" rx="73" ry="12" fill="#EDE5FF" stroke="${c.stroke}" stroke-width="2"/>
+                        <g transform="translate(-8, 12)">
+                            ${getBrandLogoSvgGroup(c, merchState.brand)}
+                        </g>
+                    </svg>
+                `;
+            } else {
+                canvas.innerHTML = `
+                    <svg viewBox="0 0 300 300" class="w-72 h-72 drop-shadow-xl">
+                        <!-- Asas del Tote Bag (Pág. 24 del Manual) -->
+                        <path d="M 110 95 C 110 20, 190 20, 190 95" fill="none" stroke="${c.stroke === '#CBD5E1' ? '#94A3B8' : c.bg}" stroke-width="12"/>
+                        <!-- Bolsa -->
+                        <rect x="75" y="90" width="150" height="185" rx="12" fill="${c.bg}" stroke="${c.stroke}" stroke-width="3"/>
+                        <g transform="translate(-2, 42)">
+                            ${getBrandLogoSvgGroup(c, merchState.brand)}
+                        </g>
+                    </svg>
+                `;
+            }
+        }
+
+        /* ----------------------------------------------------------
+           7. MODAL DE RESERVA COMERCIAL Y CREDENCIAL DIGITAL
+           ---------------------------------------------------------- */
+        let currentModalCategory = 'general';
+
+        function openRegistrationModal(category = 'general') {
+            document.getElementById('registration-modal').classList.remove('hidden');
+            document.getElementById('modal-form-view').classList.remove('hidden');
+            document.getElementById('modal-credential-view').classList.add('hidden');
+            document.getElementById('modal-selected-booth-badge').classList.add('hidden');
+            setModalCategory(category);
+        }
+
+        function openRegistrationWithBooth(boothId, category, rate) {
+            openRegistrationModal(category);
+            const badge = document.getElementById('modal-selected-booth-badge');
+            badge.textContent = `Stand Seleccionado: ${boothId} (${rate})`;
+            badge.classList.remove('hidden');
+        }
+
+        function closeRegistrationModal() {
+            document.getElementById('registration-modal').classList.add('hidden');
+        }
+
+        function updateModalRateDisplay() {
+            const selectedPlan = document.getElementById('input-plan').value;
+            document.getElementById('modal-rate-summary').textContent = selectedPlan;
+        }
+
+        function setModalCategory(cat) {
+            currentModalCategory = cat;
+            const btns = ['general', 'kids', 'aliado'];
+            btns.forEach(b => {
+                document.getElementById(`modal-cat-${b}`).className = 'py-2.5 px-3 rounded-xl font-bold text-xs bg-inntegra-surface text-inntegra-violetDeep hover:bg-inntegra-violetLight transition';
+            });
+            document.getElementById(`modal-cat-${cat}`).className = 'py-2.5 px-3 rounded-xl font-bold text-xs bg-inntegra-violet text-white shadow transition';
+
+            if (cat === 'kids') {
+                document.getElementById('label-project-name').textContent = 'Nombre de la Idea o Proyecto Infantil *';
+                document.getElementById('label-founder-name').textContent = 'Nombre del Niño(a) y Acudiente *';
+                document.getElementById('input-sector').value = 'Pabellón Infantil INNTEGRA KIDS';
+                document.getElementById('input-plan').value = 'Stand INNTEGRA KIDS ($120.000 COP)';
+            } else if (cat === 'aliado') {
+                document.getElementById('label-project-name').textContent = 'Entidad / Empresa Patrocinadora *';
+                document.getElementById('label-founder-name').textContent = 'Persona de Contacto *';
+                document.getElementById('input-plan').value = 'Vinculación Patrocinador / Aliado';
+            } else {
+                document.getElementById('label-project-name').textContent = 'Nombre del Emprendimiento / Marca *';
+                document.getElementById('label-founder-name').textContent = 'Nombre del Emprendedor(a) *';
+                document.getElementById('input-plan').value = 'Stand Semilla ($220.000 COP)';
+            }
+            updateModalRateDisplay();
+        }
+
+        function handleRegistrationSubmit(e) {
+            e.preventDefault();
+            const project = document.getElementById('input-project').value.trim();
+            const founder = document.getElementById('input-founder').value.trim();
+            const city = document.getElementById('input-city').value;
+            const sector = document.getElementById('input-sector').value;
+            const plan = document.getElementById('input-plan').value;
+            const randomId = Math.floor(100 + Math.random() * 900);
+
+            document.getElementById('cred-project').textContent = project;
+            document.getElementById('cred-founder').textContent = founder;
+            document.getElementById('cred-city').textContent = `${city}, Valle`;
+            document.getElementById('cred-sector').textContent = `${sector} • ${plan}`;
+            document.getElementById('cred-code').textContent = `INN-2026-${randomId}`;
+
+            const priceMatch = plan.match(/\$[0-9.]+\s*COP/);
+            document.getElementById('cred-plan-tag').textContent = priceMatch ? priceMatch[0] : 'ALIADO OFICIAL';
+
+            const typeLabels = {
+                general: 'Expositor Oficial INNTEGRA • Pre-Reserva Activa',
+                kids: '☕ Creador Oficial INNTEGRA KIDS • Stand Infantil',
+                aliado: '🤝 Patrocinador & Aliado Institucional'
+            };
+            document.getElementById('cred-type-badge').textContent = typeLabels[currentModalCategory];
+
+            document.getElementById('modal-form-view').classList.add('hidden');
+            document.getElementById('modal-credential-view').classList.remove('hidden');
+        }
+
+        function copyCredentialCode() {
+            const code = document.getElementById('cred-code').textContent;
+            const project = document.getElementById('cred-project').textContent;
+            const sector = document.getElementById('cred-sector').textContent;
+            const textToCopy = `Reserva Feria Empresarial INNTEGRA | Código: ${code} | Marca: ${project} | Modalidad: ${sector}`;
+            
+            const tempInput = document.createElement('textarea');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const btn = document.getElementById('copy-cred-btn');
+            btn.innerHTML = `<i class="ph-bold ph-check"></i> ¡Copiado al portapapeles!`;
+            setTimeout(() => {
+                btn.innerHTML = `<i class="ph-bold ph-copy"></i> Copiar Datos de mi Reserva`;
+            }, 2500);
+        }
+
+        /* ----------------------------------------------------------
+           8. UTILIDADES DE NAVEGACIÓN Y CARGA INICIAL
+           ---------------------------------------------------------- */
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            menu.classList.toggle('hidden');
+            icon.className = menu.classList.contains('hidden') ? 'ph-bold ph-list text-2xl' : 'ph-bold ph-x text-2xl';
+        }
+
+        window.onload = function() {
+            renderBoothsGrid();
+            setMascotPose('caminando', false);
+            renderMerchPreview();
+        };
+    </script>
+</body>
+</html>
